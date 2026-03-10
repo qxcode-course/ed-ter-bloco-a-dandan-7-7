@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_13-43-08",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,72 +37,12 @@\n ) %7B%0A\n-%09var a, b int%0A%09fmt.Scanf(%22%25d %25d%22, &a, &b)%0A%09fmt.Println(a + b)%0A%0A%09\n+    \n fmt.\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-10_13-45-02",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scanf(\"%d %d\", &a, &b)\n\tfmt.Println(a + b)\n\n\tfmt.Println(\"qxcode\")\n}\n",
+            "lines": "11"
+        }
+    ]
+}
