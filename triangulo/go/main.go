@@ -15,9 +15,9 @@ func processa(vet []int) {
 	// 2. monte o vetor auxiliar com os resultados das somas
 	// 3. chame recursivamente a função processa para o vetor auxiliar
 	// 4. imprima o vetor original
-	for i:= 0; vet[i] != null; i++{
+	//for i:= 0; vet[i] != null; i++{
 
-	}
+	//}
 }
 
 func main() {
