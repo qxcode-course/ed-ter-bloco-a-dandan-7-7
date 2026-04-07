@@ -21,6 +21,7 @@ func tostrrev(vet []int) string {
 // reverse: inverte os elementos do slice
 func reverse(vet []int) {
 	_ = vet
+	
 }
 
 // sum: soma dos elementos do slice
