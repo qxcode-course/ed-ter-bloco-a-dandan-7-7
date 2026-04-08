@@ -33,6 +33,6 @@ func main() {
 	pen.SetLineWidth(6)
 	
 	arvore(pen, 200)
-	pen.SavePNG("novo.png")
+	pen.SavePNG("arvore.png")
 	fmt.Println("PNG file created successfully.")
 }
