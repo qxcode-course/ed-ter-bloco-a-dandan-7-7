@@ -1,0 +1,43 @@
+package main
+
+
+import (
+	"fmt"
+	
+)
+
+
+
+
+func ramo(pen *Pen, dist float64) {
+	
+	if dist < 1 {
+		
+		return
+	}
+	for i := 0; i < 5; i++ {
+		pen.Walk(dist)
+		ramo(pen, dist/3)
+		pen.Walk(-dist)
+		pen.Left(72)
+	}
+	
+	
+}
+
+func main() {
+	pen := NewPen(700, 700)
+	pen.SetHeading(-160)
+	
+	pen.SetPosition(350, 350)
+
+	pen.SetLineWidth(2)
+	for i := 0; i < 5; i++ {
+		ramo(pen, 200)
+		pen.Left(-72)
+		
+	}
+	
+	pen.SavePNG("gelo.png")
+	fmt.Println("PNG file created successfully.")
+}
