@@ -827,8 +827,128 @@
         },
         {
             "label": "2026-04-11_19-44-09",
-            "content": "package main\n\n\nimport (\n\t\"fmt\"\n\t\n)\n\n\n\n\nfunc quadrado(pen *Pen, dist float64) {\n\t\n\t\n    if dist < 10 {\n        return\n    }\n    \n    \n    pen.Up() \n    pen.Walk(dist / 2)\n    pen.Left(90)\n    pen.Walk(dist / 2)\n    \n   \n    pen.Down() \n    \n    for i := 0; i < 4; i++ {\n        \n        quadrado(pen, dist / 2.2)\n        \n       \n        pen.Left(90)\n        pen.Walk(dist)\n    }\n    \n    \n    pen.Up()\n    pen.Walk(-dist / 2)\n    pen.Left(-90)\n    pen.Walk(-dist / 2)\n    \n    \n    pen.Down()\n\n    \n    \n}\n\nfunc main() {\n\tpen := NewPen(700, 700)\n\tpen.SetHeading(90)\n\t\n\tpen.SetPosition(350, 350)\n\tpen.SetLineWidth(1)\n\tquadrado(pen, 450)\n\t\n\tpen.SavePNG(\"quadrados.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -91,16 +91,17 @@\n dist %3C 1\n+0\n  %7B%0A     \n",
             "lines": "60"
+        },
+        {
+            "label": "2026-04-12_14-00-41",
+            "content": "@@ -37,22 +37,23 @@\n %0A%0A%0Afunc \n-rotaca\n+quadrad\n o(pen *P\n@@ -115,16 +115,132 @@\n n%0A    %7D%0A\n+    %0A    %0A    pen.Up() %0A    pen.Walk(dist / 2)%0A    pen.Left(90)%0A    pen.Walk(dist / 2)%0A    %0A   %0A    pen.Down() %0A    \n %0A    for\n@@ -252,17 +252,17 @@\n  0; i %3C \n-3\n+4\n ; i++ %7B%0A\n@@ -273,77 +273,197 @@\n     \n-pen.Walk(dist)%0A        pen.Right(90)%0A    %7D%0A    rotacao(pen, \n+%0A        quadrado(pen, dist / 2.2)%0A        %0A       %0A        pen.Left(90)%0A        pen.Walk(dist)%0A    %7D%0A    %0A    %0A    pen.Up()%0A    pen.Walk(-dist / 2)%0A    pen.Left(-90)%0A    pen.Walk(-\n dist \n--\n+/\n  2\n-0\n )%0A  \n@@ -469,16 +469,31 @@\n    %0A    \n+%0A    pen.Down()\n %0A%0A    %0A \n@@ -609,22 +609,23 @@\n dth(1)%0A%09\n-rotaca\n+quadrad\n o(pen, 4\n@@ -648,15 +648,17 @@\n NG(%22\n-rotacao\n+quadrados\n .png\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-12_14-05-38",
+            "content": "@@ -329,15 +329,15 @@\n ion(\n-100, 10\n+350, 35\n 0)%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-05-54",
+            "content": "@@ -135,17 +135,17 @@\n  0; i %3C \n-4\n+3\n ; i++ %7B%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-06-12",
+            "content": "@@ -183,11 +183,12 @@\n pen.\n-Lef\n+Righ\n t(90\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-06-23",
+            "content": "@@ -183,12 +183,11 @@\n pen.\n-Righ\n+Lef\n t(90\n@@ -301,16 +301,17 @@\n Heading(\n+9\n 0)%0A%09%0A%09pe\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-06-34",
+            "content": "@@ -139,9 +139,9 @@\n i %3C \n-3\n+4\n ; i+\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-06-42",
+            "content": "@@ -171,32 +171,8 @@\n st)%0A\n-        dist = dist - 8%0A\n     \n@@ -212,24 +212,29 @@\n ao(pen, dist\n+ - 20\n )%0A    %0A    %0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-12_14-07-44",
+            "content": "@@ -397,67 +397,8 @@\n 50)%0A\n-    x := 255%0A    y := 0%0A    z := 0%0A    pen.SetRGB(x, y, z)%0A\n %09%0A%09p\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-12_14-09-05",
+            "content": "@@ -405,18 +405,16 @@\n x := 255\n-.0\n %0A    y :\n@@ -412,26 +412,24 @@\n 5%0A    y := 0\n-.0\n %0A    z := 0.\n@@ -431,10 +431,8 @@\n := 0\n-.0\n %0A   \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-12_14-09-28",
+            "content": "@@ -374,16 +374,35 @@\n idth(1)%0A\n+%09rotacao(pen, 450)%0A\n     x :=\n@@ -458,35 +458,16 @@\n , y, z)%0A\n-%09rotacao(pen, 450)%0A\n %09%0A%09pen.S\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-12_14-09-44",
+            "content": "@@ -64,41 +64,8 @@\n ist \n-float64, x float64, y float64, z \n floa\n@@ -71,16 +71,16 @@\n at64) %7B%0A\n+\n %09%0A%09%0A    \n@@ -119,259 +119,8 @@\n  %7D%0A%0A\n-    if x + 50 == 255 %7B%0A        x = 0%0A    %7D else %7B%0A        x = x + 50%0A    %7D%0A    if y + 50 == 255 %7B%0A        y = 0%0A    %7D else %7B%0A        y = y + 50%0A    %7D%0A    if z + 50 == 255 %7B%0A        z = 0%0A    %7D else %7B%0A        z = z + 50%0A    %7D%0A    pen.SetRGB(x, y, z)%0A%0A%0A\n     \n@@ -240,25 +240,16 @@\n en, dist\n-, x, y, z\n )%0A    %0A \n@@ -398,18 +398,16 @@\n    y := \n-10\n 0.0%0A    \n@@ -439,16 +439,16 @@\n , y, z)%0A\n+\n %09rotacao\n@@ -460,17 +460,8 @@\n  450\n-, x, y, z\n )%0A%09%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-12_14-11-43",
+            "content": "@@ -691,17 +691,17 @@\n    y := \n-2\n+1\n 00.0%0A   \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-11-54",
+            "content": "@@ -706,18 +706,16 @@\n    z := \n-10\n 0.0%0A    \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-12-03",
+            "content": "@@ -672,27 +672,27 @@\n 1)%0A    x := \n-100\n+255\n .0%0A    y := \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-12-12",
+            "content": "@@ -234,18 +234,18 @@\n  if y + \n-2\n 5\n+0\n  == 255 \n@@ -289,18 +289,18 @@\n y = y + \n-2\n 5\n+0\n %0A    %7D%0A \n@@ -309,18 +309,17 @@\n  if z + \n-10\n+5\n 0 == 255\n@@ -364,18 +364,17 @@\n z = z + \n-10\n+5\n 0%0A    %7D%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-12-32",
+            "content": "@@ -678,19 +678,19 @@\n    x := \n-255\n+100\n .0%0A    y\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-12-44",
+            "content": "@@ -674,25 +674,27 @@\n 1)%0A    x := \n-0\n+255\n .0%0A    y := \n@@ -689,24 +689,26 @@\n .0%0A    y := \n+20\n 0.0%0A    z :=\n@@ -708,16 +708,18 @@\n    z := \n+10\n 0.0%0A    \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-12-52",
+            "content": "@@ -678,19 +678,17 @@\n    x := \n-255\n+0\n .0%0A    y\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-13-02",
+            "content": "@@ -152,119 +152,8 @@\n  %7D%0A%0A\n-    %0A%0A%0A    for i := 0; i %3C 3; i++ %7B%0A        pen.Walk(dist)%0A        dist = dist - 8%0A        pen.Right(90)%0A    %7D%0A\n     \n@@ -395,24 +395,130 @@\n GB(x, y, z)%0A\n+%0A%0A    for i := 0; i %3C 3; i++ %7B%0A        pen.Walk(dist)%0A        dist = dist - 8%0A        pen.Right(90)%0A    %7D%0A\n     rotacao(\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-12_14-13-17",
+            "content": "@@ -253,24 +253,26 @@\n ght(90)%0A    \n+%7D%0A\n     if x + 5\n@@ -286,28 +286,24 @@\n 5 %7B%0A        \n-    \n x = 0%0A      \n@@ -292,36 +292,32 @@\n       x = 0%0A    \n- \n-   \n %7D else %7B%0A       \n@@ -313,28 +313,24 @@\n e %7B%0A        \n-  \n-  \n x = x + 50%0A \n@@ -332,30 +332,22 @@\n  50%0A    \n-    %7D%0A   \n+%7D%0A\n     \n- \n if y + 2\n@@ -349,36 +349,32 @@\n y + 25 == 255 %7B%0A\n-    \n         y = 0%0A  \n@@ -367,28 +367,24 @@\n       y = 0%0A\n-    \n     %7D else %7B\n@@ -388,28 +388,24 @@\n e %7B%0A        \n- \n-   \n y = y + 25%0A \n@@ -407,30 +407,22 @@\n  25%0A    \n-    %7D%0A  \n+%7D%0A\n     \n-  \n if z + 1\n@@ -445,22 +445,14 @@\n     \n-    \n z = 0%0A\n-    \n     \n@@ -464,28 +464,24 @@\n e %7B%0A        \n-    \n z = z + 100%0A\n@@ -480,20 +480,16 @@\n z + 100%0A\n-    \n     %7D%0A  \n@@ -486,28 +486,24 @@\n 0%0A    %7D%0A    \n- \n-   \n pen.SetRGB(x\n@@ -514,24 +514,8 @@\n  z)%0A\n-    %7D%0A    %0A    %0A\n     \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-12_14-13-50",
+            "content": "@@ -363,19 +363,18 @@\n  if y + \n-150\n+25\n  == 255 \n@@ -434,11 +434,10 @@\n y + \n-150\n+25\n %0A   \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-12_14-14-09",
+            "content": "@@ -268,17 +268,17 @@\n  if x + \n-1\n+5\n 0 == 255\n@@ -335,17 +335,17 @@\n x = x + \n-1\n+5\n 0%0A      \n@@ -363,17 +363,18 @@\n  if y + \n-2\n+15\n 0 == 255\n@@ -431,17 +431,18 @@\n y = y + \n-2\n+15\n 0%0A      \n@@ -460,17 +460,18 @@\n  if z + \n-4\n+10\n 0 == 255\n@@ -528,17 +528,18 @@\n z = z + \n-4\n+10\n 0%0A      \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-12_14-14-47",
+            "content": "@@ -268,18 +268,18 @@\n  if x + \n-75\n+10\n  == 255 \n@@ -339,10 +339,10 @@\n x + \n-75\n+10\n %0A   \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-12_14-15-05",
+            "content": "package main\n\n\nimport (\n\t\"fmt\"\n\t\n)\n\n\n\n\nfunc rotacao(pen *Pen, dist float64, x float64, y float64, z float64) {\n\t\n\t\n    if dist < 1 {\n        return\n    }\n\n    \n\n\n    for i := 0; i < 3; i++ {\n        pen.Walk(dist)\n        dist = dist - 8\n        pen.Right(90)\n        if x + 75 == 255 {\n            x = 0\n        } else {\n            x = x + 75\n        }\n        if y + 20 == 255 {\n            y = 0\n        } else {\n            y = y + 20\n        }\n        if z + 40 == 255 {\n            z = 0\n        } else {\n            z = z + 40\n        }\n        pen.SetRGB(x, y, z)\n    }\n    \n    \n    rotacao(pen, dist, x, y, z)\n    \n    \n\n    \n    \n}\n\nfunc main() {\n\tpen := NewPen(700, 700)\n\tpen.SetHeading(0)\n\t\n\tpen.SetPosition(100, 100)\n\tpen.SetLineWidth(1)\n    x := 255.0\n    y := 0.0\n    z := 0.0\n    pen.SetRGB(x, y, z)\n\trotacao(pen, 450, x, y, z)\n\t\n\tpen.SavePNG(\"rotacao.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "67"
         }
     ]
 }
