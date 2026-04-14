@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-38-51",
+            "content": "@@ -242,18 +242,8 @@\n  %7D%0A%0A\n-    b:= 0%0A\n     \n@@ -372,72 +372,9 @@\n     \n-    b = 1%0A        %7D%0A    %7D%0A    if b == 0%7B%0A        fmt.Prinft(%22N%22)\n+%7D\n %0A   \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_11-39-33",
+            "content": "@@ -435,18 +435,18 @@\n fmt.Prin\n-t\n f\n+t\n (%22N%22)%0A  \n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_11-39-44",
+            "content": "@@ -472,32 +472,9 @@\n ()%0A%0A\n-    %0A    var pos int = 0\n+%0A\n %0A   \n@@ -506,24 +506,8 @@\n ++%7B%0A\n-        pos = 0%0A\n     \n@@ -526,17 +526,22 @@\n  0; j %3C \n-n\n+possui\n ; j++%7B%0A \n@@ -557,13 +557,8 @@\n   if\n- i ==\n  fig\n@@ -571,33 +571,14 @@\n s%5Bj%5D\n-%7B%0A                pos = 1\n+ == i%7B\n %0A%0A  \n@@ -585,25 +585,24 @@\n           %7D%0A\n-%0A\n         %7D%0A  \n@@ -607,90 +607,13 @@\n     \n-    if pos == 0%7B%0A            fmt.Printf(%22%25d%22, i)%0A        %7D%0A    %7D%0A    fmt.Println()%0A\n+%0A    %7D\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_11-47-51",
+            "content": "@@ -565,22 +565,17 @@\n  0; j %3C \n-possui\n+n\n ; j++%7B%0A \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-14_11-48-07",
+            "content": "@@ -684,18 +684,8 @@\n s ==\n- 0 && i !=\n  0%7B%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-14_11-48-46",
+            "content": "@@ -720,17 +720,16 @@\n intf(%22%25d\n- \n %22, i)%0A  \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-14_11-49-23",
+            "content": "@@ -724,94 +724,14 @@\n (%22%25d\n+ \n %22, i)\n-%0A            if(i == total - 1)%7B%0A                fmt.Printf(%22 %22, i)%0A            %7D\n %0A   \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-14_11-49-49",
+            "content": "@@ -788,16 +788,19 @@\n intf(%22 %22\n+, i\n )%0A      \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_11-49-56",
+            "content": "@@ -640,40 +640,8 @@\n  = 1\n-%0A                fmt.Printf(%22 %22)\n %0A%0A  \n@@ -734,24 +734,89 @@\n             \n+if(i == total - 1)%7B%0A                fmt.Printf(%22 %22)%0A            %7D\n %0A        %7D%0A \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_11-51-03",
+            "content": "@@ -636,16 +636,48 @@\n  pos = 1\n+%0A                fmt.Printf(%22 %22)\n %0A%0A      \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_11-51-16",
+            "content": "@@ -564,17 +564,16 @@\n = 0; j %3C\n-=\n  possui;\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-14_11-51-33",
+            "content": "@@ -512,17 +512,16 @@\n = 0; i %3C\n-=\n  total; \n@@ -564,16 +564,17 @@\n = 0; j %3C\n+=\n  possui;\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-14_11-51-54",
+            "content": "@@ -641,30 +641,8 @@\n  = 1\n-%0A                break\n %0A%0A  \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-14_11-52-27",
+            "content": "@@ -782,55 +782,8 @@\n   %7D%0A\n-    if pos == 0%7B%0A        fmt.Printf(%22N%22)%0A    %7D%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_11-52-48",
+            "content": "@@ -497,21 +497,8 @@\n = 0%0A\n-    ver := 0%0A\n     \n@@ -522,24 +522,24 @@\n total; i++%7B%0A\n+\n         pos \n@@ -642,32 +642,8 @@\n = 1%0A\n-                ver = 1%0A\n     \n@@ -789,11 +789,11 @@\n  if \n-ver\n+pos\n  == \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_11-54-05",
+            "content": "@@ -510,64 +510,8 @@\n = 0%0A\n-    faltantes := make(%5B%5Dint, total - possui)%0A    k := 0%0A\n     \n@@ -535,24 +535,24 @@\n total; i++%7B%0A\n+\n         pos \n@@ -762,120 +762,8 @@\n     \n-        faltantes%5Bk%5D = i%0A            k++%0A            %0A        %7D%0A    %7D%0A    for(i := 0; i %3C total - possui; i++)%7B%0A\n     \n@@ -784,90 +784,26 @@\n (%22%25d\n- \n %22, \n-faltantes%5Bi%5D)%0A        if( i %3C total - possui - 1)%7B%0A            fmt.Printf(%22 %22)\n+i)%0A            \n %0A   \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-14_11-55-46",
+            "content": "@@ -891,16 +891,17 @@\n %0A    for\n+(\n i := 0; \n@@ -919,24 +919,25 @@\n  possui; i++\n+)\n %7B%0A        fm\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_11-56-02",
+            "content": "@@ -883,33 +883,32 @@\n  %7D%0A    %7D%0A    for\n- \n i := 0; i %3C tota\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_11-56-10",
+            "content": "@@ -747,16 +747,21 @@\n         \n+break\n %0A%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_11-58-23",
+            "content": "@@ -883,61 +883,8 @@\n   %7D%0A\n-    if ver == 0%7B%0A        fmt.Printf(%22N%22)%0A    %7D else%7B%0A\n     \n@@ -1041,22 +1041,62 @@\n %7D%0A    %7D%0A\n-%7D%0A\n     \n+if ver == 0%7B%0A        fmt.Printf(%22N%22)%0A    %7D\n %0A    fmt\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_11-59-29",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var total, possui int\n    fmt.Scanf(\"%d\", &total)\n    fmt.Scanf(\"%d\", &possui)\n    var figurinhas = make([]int, possui)\n    for i := 0; i < possui; i++ {\n        fmt.Scanf(\"%d\", &figurinhas[i])\n    }\n\n    b:= 0\n    for i := 1; i<possui;i++{\n        if figurinhas[i - 1] == figurinhas[i]{\n            fmt.Printf(\"%d \", figurinhas[i])\n            b = 1\n        }\n    }\n    if b == 0{\n        fmt.Printf(\"N\")\n    }\n    fmt.Println()\n\n    \n    var pos int = 0\n    ver := 0\n    faltantes := make([]int, total - possui)\n    k := 0\n    for i := 0; i <= total; i++{\n        pos = 0\n        for j := 0; j < possui; j++{\n            if i == figurinhas[j]{\n                pos = 1\n                ver = 1\n                \n\n            }\n\n        }\n        if pos == 0 && i != 0{\n            faltantes[k] = i\n            k++\n            \n        }\n    }\n    if ver == 0{\n        fmt.Printf(\"N\")\n    } else{\n    for i := 0; i < total - possui; i++{\n        fmt.Printf(\"%d \", faltantes[i])\n        if( i < total - possui - 1){\n            fmt.Printf(\" \")\n        }\n    }\n}\n    \n    fmt.Println()\n\n}\n",
+            "lines": "59"
+        }
+    ]
+}
