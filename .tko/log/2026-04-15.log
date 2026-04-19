@@ -1,0 +1,10 @@
+2026-04-15 11:09:27, MOVE, v:1, k:origin@mumia, mode:DOWN
+2026-04-15 11:09:27, MOVE, v:1, k:origin@mumia, mode:PICK
+2026-04-15 11:09:31, EXEC, v:1, k:origin@mumia, mode:FULL, rate:0, size:5
+2026-04-15 11:09:33, MOVE, v:1, k:origin@mumia, mode:BACK
+2026-04-15 11:09:27, MOVE, v:1, k:origin@mumia, mode:EDIT
+2026-04-15 11:09:27, MOVE, v:1, k:origin@mumia, mode:EDIT
+2026-04-15 15:57:24, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-04-15 15:57:46, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:70
+2026-04-15 15:58:19, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-04-15 15:57:40, MOVE, v:1, k:ed@princesa, mode:EDIT

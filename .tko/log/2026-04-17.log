@@ -1,0 +1,34 @@
+2026-04-17 12:32:49, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-04-17 12:32:51, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-04-17 12:33:30, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-04-17 12:33:32, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-04-17 12:33:33, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-04-17 12:33:57, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-04-17 12:34:02, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-04-17 12:32:49, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-17 12:32:49, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-17 12:32:49, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-17 12:32:49, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-17 12:33:32, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-17 12:33:32, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-17 12:35:32, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-17 12:40:33, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:27, fail:COMP
+2026-04-17 12:41:02, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:32, size:27
+2026-04-17 12:42:18, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-04-17 12:42:21, MOVE, v:1, k:ed@distancia, mode:DOWN
+2026-04-17 12:42:21, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-04-17 12:40:59, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-17 12:42:21, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-04-17 12:42:21, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-04-17 12:42:21, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-04-17 12:44:45, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-04-17 13:02:18, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-04-17 13:02:19, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-04-17 13:02:27, MOVE, v:1, k:ed@vetbuild, mode:DOWN
+2026-04-17 13:02:30, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-17 13:02:27, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-17 13:02:27, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-17 13:02:27, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-17 13:02:27, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-17 13:02:49, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-17 13:08:50, MOVE, v:1, k:ed@vetbuild, mode:EDIT
