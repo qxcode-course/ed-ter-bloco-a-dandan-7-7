@@ -29,8 +29,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@vector
+- ed@rec
 flags:
   inbox: all
   panel: help

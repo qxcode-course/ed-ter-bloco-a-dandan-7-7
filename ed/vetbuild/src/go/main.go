@@ -43,6 +43,22 @@ func (v *Vector) Status() string{
 	return fmt.Sprintf("size:%d capacity:%d", v.size, v.capacity)
 }
 
+func (v *Vector)PushBack (valor int) {
+	if v.size == v.capacity {
+		
+		Vetor := NewVector(v.capacity * 2)
+
+		for i := 0; i < v.capacity ; i++{
+			Vetor.data[i] = v.data[i]
+		}
+		v.data = Vetor.data
+		v.capacity = Vetor.capacity
+
+	}
+	v.data[v.size] = valor
+	v.size++
+}
+ 
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -68,10 +84,10 @@ func main() {
 			value, _ := strconv.Atoi(parts[1])
 			v = NewVector(value)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			for _, part := range parts[1:] {
+			 	value, _ := strconv.Atoi(part)
+			 	v.PushBack(value)
+			}
 		case "show":
 			fmt.Println(v)
 		case "status":
@@ -110,13 +126,13 @@ func main() {
 		case "capacity":
 			// fmt.Println(v.Capacity())
 		case "get":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, err := v.At(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(value)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, err := v.At(index)
+			 if err != nil {
+			 	fmt.Println(err)
+			 } else {
+			 	fmt.Println(value)
+			}
 		case "set":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, _ := strconv.Atoi(parts[2])
