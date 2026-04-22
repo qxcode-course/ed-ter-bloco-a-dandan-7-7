@@ -119,6 +119,31 @@ func (v *Vector) PopBack() error{
 
 	}
 }
+
+func (v *Vector) Slice(inicio int, fim int) *Vector{
+	
+	Novo := NewVector(fim - inicio)
+	Novo.data = v.data[inicio:fim]
+	Novo.size = fim - inicio
+	return Novo
+
+	/*
+	Novo := NewVector(fim - inicio)
+	j := inicio
+	for i := 0; i < fim - inicio; i++{
+		Novo.size++
+		
+		if(j < 0){
+			Novo.data[i] = v.data[fim + j]
+		} else {
+			Novo.data[i] = v.data[j]
+		}
+		j++
+	}
+	return Novo
+
+	*/
+}
  
 func main() {
 	var line, cmd string
@@ -206,10 +231,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}
