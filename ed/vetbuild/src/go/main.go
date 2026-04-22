@@ -122,28 +122,85 @@ func (v *Vector) PopBack() error{
 
 func (v *Vector) Slice(inicio int, fim int) *Vector{
 	
-	Novo := NewVector(fim - inicio)
-	Novo.data = v.data[inicio:fim]
-	Novo.size = fim - inicio
-	return Novo
-
-	/*
-	Novo := NewVector(fim - inicio)
-	j := inicio
-	for i := 0; i < fim - inicio; i++{
-		Novo.size++
-		
-		if(j < 0){
-			Novo.data[i] = v.data[fim + j]
-		} else {
-			Novo.data[i] = v.data[j]
-		}
-		j++
+	if v.size == 0 {
+		return NewVector(0)
 	}
-	return Novo
+	
+	novoInicio := ((inicio % v.size) + v.size) % v.size
+	novoFim := ((fim % v.size) + v.size) % v.size
 
-	*/
+	var tamanho int
+	if novoInicio < novoFim {
+		tamanho = novoFim - novoInicio
+	} else {
+		tamanho = (v.size - novoInicio) + novoFim
+	}
+
+	if tamanho == 0{
+		return NewVector(0)
+	}
+	Novo := NewVector(tamanho)
+	Novo.size = tamanho
+
+	j := novoInicio
+	for i:= 0; i < tamanho; i++{
+		Novo.data[i] = v.data[j]
+		j++
+		if j == v.size{
+			j = 0
+		}
+	}
+
+	return Novo
+	
 }
+
+func (v *Vector)IndexOf(valor int) int {
+
+	for i := 0; i < v.size; i++ {
+		if valor == v.data[i]{
+			return i
+		}
+	}
+
+
+
+	return -1
+}
+func (v *Vector) Contains(value int) bool {
+
+	for i := 0; i < v.size; i++{
+		if value == v.data[i]{
+			return true
+		}
+	}
+	return false
+}
+func (v *Vector) Erase(index int) error{
+
+
+	
+	
+	if index <= v.size{
+		for j := index; j < v.size - 1; j++{
+			v.data[j] = v.data[j+1]
+		}
+		v.size--
+		return nil
+
+	}
+
+	return errors.New("index out of range")
+}
+
+func (v *Vector) Set(index int, value int) error{
+	if index > v.size{
+		return errors.New("index out of range")
+	}
+	v.data[index] = value
+	return nil
+}
+
  
 func main() {
 	var line, cmd string
@@ -191,22 +248,22 @@ func main() {
 				fmt.Println(err)
 			}
 		case "erase":
-			//index, _ := strconv.Atoi(parts[1])
-			//err := v.Erase(index)
-			//if err != nil {
-			//	fmt.Println(err)
-			//}
+			index, _ := strconv.Atoi(parts[1])
+			err := v.Erase(index)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+			 	fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "clear":
 			v.Clear()
 		case "capacity":
@@ -220,13 +277,13 @@ func main() {
 			 	fmt.Println(value)
 			}
 		case "set":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Set(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
-			// 
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Set(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
+		 
 		case "reserve":
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)

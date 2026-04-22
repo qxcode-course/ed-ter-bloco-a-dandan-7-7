@@ -1,0 +1,29 @@
+2026-04-22 14:21:14, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-22 14:21:16, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63
+2026-04-22 14:23:30, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63, size:251
+2026-04-22 14:24:20, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-22 14:24:22, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63, size:236
+2026-04-22 14:25:59, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63, size:236
+2026-04-22 14:27:16, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63, size:236
+2026-04-22 14:28:34, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:29:27, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:63, size:246
+2026-04-22 14:31:14, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:72, size:247
+2026-04-22 14:34:06, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:38:13, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:72, size:255
+2026-04-22 14:38:07, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:42:22, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:72, size:266
+2026-04-22 14:44:16, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:45:00, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:72, size:275
+2026-04-22 14:46:12, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:81, size:275
+2026-04-22 14:49:17, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:54:02, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:81, size:296
+2026-04-22 14:53:57, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:59:18, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 14:59:32, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:300, fail:COMP
+2026-04-22 15:00:25, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:303, fail:COMP
+2026-04-22 15:00:33, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-22 15:00:42, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:18, size:304
+2026-04-22 15:01:42, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:90, size:304
+2026-04-22 15:01:42, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-22 15:07:41, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:100, size:299
+2026-04-22 15:08:25, MOVE, v:1, k:ed@vetbuild, mode:BACK
