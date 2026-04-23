@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-23_19-10-01",
+            "content": "@@ -332,17 +332,8 @@\n g%7B%0A%09\n-return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-23_19-10-30",
+            "content": "@@ -303,343 +303,45 @@\n unc \n-Join(slice %5B%5Dint, sep string) string %7B%0A%09if len(slice) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09var result strings.Builder%0A%09fmt.Fprintf(&result, %22%25d%22, slice%5B0%5D)%0A%09for _, value := range slice%5B1:%5D %7B%0A%09%09fmt.Fprintf(&result, %22%25s%25d%22, sep, value)%0A%09%7D%0A%09return result.String()%0A%7D%0A%0Afunc (set *Set) string() string%7B%0A%09return %22%5B %22 + Join(set.data%5B0:set.size%5D, %22, %22) + %22%5D\n+(set *Set) string() string%7B%0A%09return %22\n %22%0A%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-23_19-41-04",
+            "content": "@@ -565,17 +565,17 @@\n t *Set) \n-S\n+s\n tring() \n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-04-23_19-43-05",
+            "content": "@@ -592,16 +592,17 @@\n eturn %22%5B\n+ \n %22 + Join\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-04-23_19-43-13",
+            "content": "@@ -642,582 +642,8 @@\n %0A%7D%0A%0A\n-func (set *Set) Insert(value int) %7B%0A%09for i := 0; i %3C set.size; i++%7B%0A%09%09if set.data%5Bi%5D == value%7B%0A%09%09%09return%0A%09%09%7D%0A%09%7D%0A%09if set.size == set.capacity%7B%0A%09%09newCapacity := set.capacity * 2%0A%09%09if newCapacity == 0 %7B%0A%09%09%09newCapacity = 1%0A%09%09%7D%0A%09%09novo := NewSet(newCapacity)%0A%09%09for i:= 0; i %3C set.capacity; i++%7B%0A%09%09%09novo.data%5Bi%5D = set.data%5Bi%5D%0A%09%09%7D%0A%09%09set.data = novo.data%0A%09%09set.capacity = novo.capacity%0A%09%7D%0A%09set.size++%0A%0A%09for i:= 0; i %3C set.size; i++%7B%0A%09%09if value %3E set.data%5Bi%5D%7B%0A%09%09%09for j := set.size - 1; j %3E i; j++%7B%0A%09%09%09%09set.data%5Bj%5D = set.data%5Bj - 1%5D%0A%09%09%09%7D%0A%09%09%09set.data%5Bi%5D = value%0A%09%09%09return%0A%09%09%7D%0A%09%7D%0A%0A%09%0A%7D %0A%0A\n func\n@@ -652,16 +652,16 @@\n ain() %7B%0A\n+\n %09var lin\n@@ -1035,16 +1035,18 @@\n rt%22:%0A%09%09%09\n+//\n  for _, \n@@ -1074,16 +1074,18 @@\n :%5D %7B%0A%09%09%09\n+//\n  %09value,\n@@ -1116,28 +1116,11 @@\n %0A%09%09%09\n-%09v.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-04-23_20-07-18",
+            "content": "@@ -1126,10 +1126,10 @@\n i; j\n---\n+++\n %7B%0A%09%09\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-23_20-10-14",
+            "content": "@@ -1073,17 +1073,17 @@\n f value \n-%3C\n+%3E\n  set.dat\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-23_20-11-02",
+            "content": "@@ -1039,16 +1039,23 @@\n %09for i:=\n+ 0; i %3C\n  set.siz\n@@ -1062,18 +1062,10 @@\n e; i\n- %3E= 0; i--\n+++\n %7B%0A%09%09\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-23_20-11-53",
+            "content": "@@ -1035,31 +1035,24 @@\n ++%0A%0A%09for i:=\n- 0; i %3C\n  set.size; i\n@@ -1047,26 +1047,34 @@\n  set.size; i\n-++\n+ %3E= 0; i--\n %7B%0A%09%09if value\n@@ -1093,23 +1093,8 @@\n i%5D%7B%0A\n-%09%09%09%0A%09%09%7D else %7B%0A\n %09%09%09f\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-23_20-13-20",
+            "content": "@@ -1073,17 +1073,17 @@\n f value \n-%3E\n+%3C\n  set.dat\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-23_20-13-28",
+            "content": "@@ -1023,24 +1023,19 @@\n %09%7D%0A%09\n-%0A%09var indice int\n+set.size++%0A\n %0A%09fo\n@@ -1073,17 +1073,17 @@\n f value \n-%3C\n+%3E\n  set.dat\n@@ -1095,35 +1095,22 @@\n %0A%09%09%09\n-indice = i%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A\n+%0A%09%09%7D else %7B%0A%09%09\n %09for\n@@ -1138,20 +1138,16 @@\n  %3E i\n-ndice\n ; j--%7B%0A\n+%09\n %09%09%09s\n@@ -1177,18 +1177,21 @@\n  - 1%5D%0A%09%09\n+%09\n %7D%0A\n+%09%09\n %09set.dat\n@@ -1197,13 +1197,8 @@\n ta%5Bi\n-ndice\n %5D = \n@@ -1208,20 +1208,23 @@\n ue%0A%09\n-set.size++\n+%09%09return%0A%09%09%7D\n %0A%09\n+%7D\n %0A%0A%09%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-23_20-16-35",
+            "content": "@@ -1025,26 +1025,22 @@\n %0A%09%0A%09\n+var \n indice \n-:= set.size\n+int\n %0A%09fo\n@@ -1141,16 +1141,20 @@\n set.size\n+ - 1\n ; j %3E in\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-04-23_20-18-54",
+            "content": "@@ -1252,312 +1252,8 @@\n %7D %0A%0A\n-func (set *Set) Erase(value int) bool%7B%0A%0A%09indice := -1%0A%09for i := 0; i %3C set.size; i++%7B%0A%09%09if value == set.data%5Bi%5D%7B%0A%09%09%09indice = i%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%09if indice == -1%7B%0A%09%09return false%0A%09%7D%0A%09for i:= indice; i %3Cset.size - 1; i++%7B%0A%09%09set.data%5Bi%5D = set.data%5Bi+1%5D%0A%09%7D%0A%09set.data%5Bset.size%5D = 0%0A%09set.size--%0A%09return true%0A%0A%7D%0A%0A\n func\n@@ -1788,24 +1788,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-04-23_20-25-54",
+            "content": "@@ -2135,64 +2135,8 @@\n 1%5D)%0A\n-%09%09%09sucesso := Erase(value)%0A%09%09%09if sucesso%7B%0A%09%09%09%09fmt.%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-04-23_20-27-29",
+            "content": "@@ -2185,59 +2185,8 @@\n fmt.\n-Println(%22true%22)%0A%09%09%09%7D else%7B%0A%09%09%09%09fmt.Println(%22false%22)\n %0A%09%09%09\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-04-23_20-28-06",
+            "content": "@@ -2145,18 +2145,16 @@\n esso := \n-v.\n Erase(va\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-04-23_20-31-40",
+            "content": "@@ -1517,20 +1517,16 @@\n set.size\n- - 1\n %5D = 0%0A%09s\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-04-23_20-32-36",
+            "content": "@@ -2183,18 +2183,16 @@\n so%7B%0A%09%09%09%09\n-//\n fmt.Prin\n@@ -2235,23 +2235,13 @@\n ln(%22\n-value not found\n+false\n %22)%0A%09\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-04-23_20-33-03",
+            "content": "@@ -1558,147 +1558,8 @@\n e%0A%0A%7D\n-%0Afunc (set *Set) Contains(value int) bool%7B%0A%09for i := 0; i %3C set.size; i++%7B%0A%09%09if set.data%5Bi%5D == value%7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false%0A%7D\n %0A%0Afu\n@@ -2274,24 +2274,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2320,124 +2320,8 @@\n 1%5D)%0A\n-%09%09%09contem := v.Contains(value)%0A%09%09%09if contem%7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A%0A%09%09%09%0A\n %09%09ca\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-04-23_20-37-02",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype Set struct{\n   data []int                           \n   size int                               \n   capacity int \n}\n\nfunc NewSet(valor int) *Set{\n\treturn &Set{\n\t\tdata : make([]int, valor),\n\t\tsize : 0,\n\t\tcapacity : valor,\n\t}\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tvar result strings.Builder\n\tfmt.Fprintf(&result, \"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tfmt.Fprintf(&result, \"%s%d\", sep, value)\n\t}\n\treturn result.String()\n}\n\nfunc (set *Set) String() string{\n\treturn \"[\" + Join(set.data[0:set.size], \", \") + \"]\"\n}\n\nfunc (set *Set) Insert(value int) {\n\tfor i := 0; i < set.size; i++{\n\t\tif set.data[i] == value{\n\t\t\treturn\n\t\t}\n\t}\n\tif set.size == set.capacity{\n\t\tnewCapacity := set.capacity * 2\n\t\tif newCapacity == 0 {\n\t\t\tnewCapacity = 1\n\t\t}\n\t\tnovo := NewSet(newCapacity)\n\t\tfor i:= 0; i < set.capacity; i++{\n\t\t\tnovo.data[i] = set.data[i]\n\t\t}\n\t\tset.data = novo.data\n\t\tset.capacity = novo.capacity\n\t}\n\t\n\tindice := set.size\n\tfor i:= 0; i < set.size; i++{\n\t\tif value < set.data[i]{\n\t\t\tindice = i\n\t\t\tbreak\n\t\t}\n\t}\n\tfor j := set.size; j > indice; j--{\n\t\t\tset.data[j] = set.data[j - 1]\n\t\t}\n\tset.data[indice] = value\n\tset.size++\n\t\n\n\t\n} \n\nfunc (set *Set) Erase(value int) bool{\n\n\tindice := -1\n\tfor i := 0; i < set.size; i++{\n\t\tif value == set.data[i]{\n\t\t\tindice = i\n\t\t\tbreak\n\t\t}\n\t}\n\tif indice == -1{\n\t\treturn false\n\t}\n\tfor i:= indice; i <set.size - 1; i++{\n\t\tset.data[i] = set.data[i+1]\n\t}\n\tset.data[set.size - 1] = 0\n\tset.size--\n\treturn true\n\n}\nfunc (set *Set) Contains(value int) bool{\n\tfor i := 0; i < set.size; i++{\n\t\tif set.data[i] == value{\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\t\tcase \"insert\":\n\t\t\t for _, part := range parts[1:] {\n\t\t\t \tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(v)\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tsucesso := v.Erase(value)\n\t\t\tif sucesso{\n\t\t\t\t//fmt.Println(\"true\")\n\t\t\t} else{\n\t\t\t\tfmt.Println(\"value not found\")\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tcontem := v.Contains(value)\n\t\t\tif contem{\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\n\t\t\t\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "157"
+        }
+    ]
+}
