@@ -29,8 +29,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@vector
 - ed@rec
+- ed@vector
 flags:
   inbox: all
   panel: help
@@ -38,5 +38,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@setbuild
-selected_index: 30
+selected: ed@bettersearch
+selected_index: 31
