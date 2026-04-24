@@ -104,3 +104,4 @@
 2026-04-23 23:40:30, MOVE, v:1, k:ed@multiset, mode:BACK
 2026-04-23 23:40:34, MOVE, v:1, k:ed@setbuild, mode:PICK
 2026-04-23 23:40:35, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100
+2026-04-23 23:38:51, MOVE, v:1, k:ed@multiset, mode:EDIT
