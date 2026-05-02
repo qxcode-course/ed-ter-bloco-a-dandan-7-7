@@ -139,3 +139,4 @@
 2026-05-02 14:51:42, MOVE, v:1, k:origin@mumia, mode:PICK
 2026-05-02 14:51:43, EXEC, v:1, k:origin@mumia, mode:FULL, rate:0
 2026-05-02 14:51:44, MOVE, v:1, k:origin@mumia, mode:BACK
+2026-05-02 14:50:01, MOVE, v:1, k:ed@prin_list1, mode:EDIT
