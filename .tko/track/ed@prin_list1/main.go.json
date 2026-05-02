@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-02_14-16-57",
+            "content": "@@ -24,18 +24,16 @@\n %09%22fmt%22%0A%09\n-//\n %22strings\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-02_14-17-31",
+            "content": "@@ -39,18 +39,16 @@\n ngs%22%0A)%0A%0A\n-%0A%0A\n // mostr\n@@ -252,72 +252,8 @@\n t%5D %7B\n-%0A%0A%09if it.next == l.root%7B%0A%09%09return l.root.next%0A%09%7D%0A%09return it.next\n %0A%09re\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-02_14-32-17",
+            "content": "@@ -24,16 +24,18 @@\n %09%22fmt%22%0A%09\n+//\n %22strings\n@@ -36,16 +36,16 @@\n trings%22%0A\n-\n )%0A%0A%0A%0A// \n@@ -148,181 +148,9 @@\n g %7B%0A\n-%0A%09values := %5B%5Dstring%7B%7D%0A%09for n := l.root.next; n != l.root; n = n.next %7B%0A%09%09values = append(values, fmt.Sprint(n.Value))%0A%09%7D%0A%09return %22%5B%22 + strings.Join(values, %22, %22) + %22%5D%22%0A%0A%09//\n+%09\n retu\n@@ -315,19 +315,17 @@\n it.next%0A\n+\n %09\n-//\n return n\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-02_14-34-54",
+            "content": "@@ -563,18 +563,16 @@\n hosen)%0A%09\n-//\n fmt.Prin\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-35-14",
+            "content": "@@ -274,17 +274,16 @@\n eturn %22%5B\n- \n %22 + stri\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-35-21",
+            "content": "@@ -309,17 +309,16 @@\n , %22) + %22\n- \n %5D%22%0A%0A%09//r\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-35-26",
+            "content": "@@ -301,16 +301,17 @@\n alues, %22\n+,\n  %22) + %22 \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-35-35",
+            "content": "@@ -305,9 +305,8 @@\n s, %22\n-%3E\n  %22) \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-35-41",
+            "content": "@@ -39,18 +39,16 @@\n s%22%0A)%0A%0A%0A%0A\n-%0A%0A\n // mostr\n@@ -148,46 +148,53 @@\n %7B%0A%0A%09\n-str := %22%5B %22%0A%0A\n+values := %5B%5Dstring%7B%7D\n %0A%09for \n-it\n+n\n  := l.\n-F\n ro\n-nt(); it\n+ot.next; n\n  != \n@@ -205,150 +205,132 @@\n ot; \n-it = it\n+n = n\n .next\n+ \n %7B%0A%09%09\n-str+= fmt.FormatString(%22%25d%22, rune(it.Value))%0A%0A%09%09if it == sword%7B%0A%09%09%09str+=%22%3E %22%0A%09%09%7D else %7B%0A%09%09%09str+=\n+values = append(values, fmt.Sprint(n.Value))%0A%09%7D%0A%09return %22%5B %22 + strings.Join(values, %22%3E %22) +\n  %22 \n+%5D\n %22%0A\n-%09%09%7D%0A%09%7D%0A%0A%09return str + %22 %5D\n+%0A%09//return %22\n %22%0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-02_14-47-11",
+            "content": "@@ -1,874 +1,350 @@\n-package main%0A%0Aimport (%0A%09%22fmt%22%0A%09//%22strings%22%0A)%0A%0A%0A%0A%0A%0A// mostra a lista com o elemento sword destacado%0Afunc ToStr(l *DList%5Bint%5D, sword *DNode%5Bint%5D) string %7B%0A%0A%09str := %22%5B %22%0A%0A%0A%09for it := l.Front(); it != l.root; it = it.next%7B%0A%09%09str+= fmt.Sprintf(%22%25d%22, it.Value)%0A%0A%09%09if it == sword%7B%0A%09%09%09str+=%22%3E %22%0A%09%09%7D%0A%0A%09%09str+= %22 %22%0A%09%09%0A%09%7D%0A%0A%09return str + %22%5D%22%0A%7D%0A%0A// move para frente na lista circular%0Afunc Next(l *DList%5Bint%5D, it *DNode%5Bint%5D) *DNode%5Bint%5D %7B%0A%0A%09if it.next == l.root%7B%0A%09%09return l.root.next%0A%09%7D%0A%09return it.next%0A%09//return nil%0A%7D%0A%0Afunc main() %7B%0A%09var qtd, chosen int%0A%09fmt.Scan(&qtd, &chosen)%0A%09//fmt.Println(qtd, chosen)%0A%09l := NewDList%5Bint%5D()%0A%09for i := 1; i %3C= qtd; i++ %7B%0A%09%09l.PushBack(i)%0A%09%7D%0A%09sword := l.Front()%0A%09for range chosen - 1 %7B%0A%09%09sword = Next(l, sword)%0A%09%7D%0A%09for range qtd - 1 %7B%0A%09%09fmt.Println(ToStr(l, sword))%0A%09%09l.Erase(Next(l, sword))%0A%09%09sword = Next(l, sword)%0A%09%7D%0A%09fmt.Println(ToStr(l, sword))%0A%7D\n+@@ -226,22 +226,32 @@%0A fmt.%0A-Sprintf%0A+FormatString%0A (%2522%2525d%2522, %0A+rune(%0A it.V%0A@@ -255,16 +255,17 @@%0A t.Value)%0A+)%0A %250A%250A%2509%2509if i%0A@@ -292,20 +292,27 @@%0A %2522%253E %2522%250A%2509%2509%257D%0A-%250A%0A+ else %257B%0A %250A%2509%2509%0A+%2509%0A str+= %2522 %0A@@ -315,16 +315,17 @@%0A = %2522 %2522%250A%2509%2509%0A+%257D%0A %250A%2509%257D%250A%250A%2509re%0A@@ -336,16 +336,17 @@%0A  str + %2522%0A+ %0A %255D%2522%250A%257D%250A%250A//\n %0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-02_14-49-52",
+            "content": "@@ -277,16 +277,17 @@\n %09str+=%22%3E\n+ \n %22%0A%09%09%7D%0A%0A%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-05-02_14-50-05",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"strings\"\n)\n\n\n\n\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\n\tstr := \"[ \"\n\n\n\tfor it := l.Front(); it != l.root; it = it.next{\n\t\tstr+= fmt.Sprintf(\"%d\", it.Value)\n\n\t\tif it == sword{\n\t\t\tstr+=\">\"\n\t\t}\n\n\t\tstr+= \" \"\n\t\t\n\t}\n\n\treturn str + \"]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\n\tif it.next == l.root{\n\t\treturn l.root.next\n\t}\n\treturn it.next\n\t//return nil\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\t//fmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "60"
+        }
+    ]
+}

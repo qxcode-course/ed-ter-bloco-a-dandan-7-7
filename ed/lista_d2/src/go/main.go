@@ -19,8 +19,31 @@ type Node struct{
 //Next() *Node
 //Prev() *Node
 
+func (node *Node) Next() *Node{
+	if node.next == node.root {
+		return nil
+	}
+	return node.next
+}
+
+func (node *Node) Prev() *Node{
+	if node.prev == node.root {
+		return nil
+	}
+	return node.prev
+}
+
+
 type LList struct {
     root *Node
+}
+
+func (ll *LList) Front() *Node{
+	return ll.root.Next()
+}
+
+func (ll *LList) Back() *Node{
+	return ll.root.Prev()
 }
 
 func NewLList() *LList{
@@ -74,10 +97,73 @@ func (ll *LList) Search(value int) *Node{
 	return nil
 }
 
-func (ll *LList) Remove(node *Node) {
+func (ll *LList) Remove(node *Node) *Node{
 	node.next.prev = node.prev
 	node.prev.next = node.next 
+
+	return node.Next()
 }
+
+func (ll *LList) PushBack(valor int) {
+	novo := &Node{
+		value: valor,
+		root: ll.root,
+	}
+
+	novo.prev = ll.root.prev
+	novo.next = ll.root
+	novo.prev.next = novo
+	ll.root.prev = novo
+
+}
+
+func (ll *LList) PushFront(valor int) {
+	novo := &Node{
+		value: valor,
+		root: ll.root,
+	}
+
+	novo.prev = ll.root
+	novo.next = ll.root.next
+	novo.next.prev = novo
+	ll.root.next = novo
+
+}
+
+func (ll *LList) Insert(node *Node, valor int){
+
+	novo := &Node{
+		value: valor,
+		root: ll.root,
+	}
+
+	novo.next = node
+	novo.prev = node.prev
+	node.prev = novo
+	novo.prev.next = novo
+
+}
+
+func (ll *LList) Clear(){
+	ll.root.next = ll.root
+	ll.root.prev = ll.root
+}
+func (ll *LList) PopBack(){
+
+	//temp := ll.root.prev
+	ll.root.prev = ll.root.prev.prev
+	ll.root.prev.next = ll.root
+	
+}
+
+func (ll *LList) PopFront(){
+
+	//temp := ll.root.prev
+	ll.root.next = ll.root.next.next
+	ll.root.next.prev = ll.root
+	
+}
+
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -104,49 +190,49 @@ func main() {
 		case "size":
 			fmt.Println(ll.Size())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+			num, _ := strconv.Atoi(v)
+				ll.PushBack(num)
+			}
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushFront(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushFront(num)
+			}
 		case "pop_back":
-			// ll.PopBack()
+			ll.PopBack()
 		case "pop_front":
-			// ll.PopFront()
+			ll.PopFront()
 		case "clear":
-			// ll.Clear()
+			ll.Clear()
 		case "walk":
-			// fmt.Print("[ ")
-			// for node := ll.Front(); node != nil; node = node.Next() {
-			// 	fmt.Printf("%v ", node.Value)
-			// }
-			// fmt.Print("]\n[ ")
-			// for node := ll.Back(); node != nil; node = node.Prev() {
-			// 	fmt.Printf("%v ", node.Value)
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for node := ll.Front(); node != nil; node = node.Next() {
+				fmt.Printf("%v ", node.value)
+			}
+			fmt.Print("]\n[ ")
+			for node := ll.Back(); node != nil; node = node.Prev() {
+				fmt.Printf("%v ", node.value)
+			}
+			fmt.Println("]")
 		case "replace":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// newvalue, _ := strconv.Atoi(args[2])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	node.Value = newvalue
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				node.value = newvalue
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "insert":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// newvalue, _ := strconv.Atoi(args[2])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	ll.Insert(node, newvalue)
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				ll.Insert(node, newvalue)
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "remove":
 			oldvalue, _ := strconv.Atoi(args[1])
 			node := ll.Search(oldvalue)
