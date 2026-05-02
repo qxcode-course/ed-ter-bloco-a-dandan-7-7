@@ -29,14 +29,18 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@list
+- ed@basic
 - ed@rec
+- ed@map_set
+- eval1@eval1
 - ed@vector
 flags:
   inbox: all
-  panel: help
+  panel: logs
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@bettersearch
-selected_index: 31
+selected: ed@lista_d2
+selected_index: 52

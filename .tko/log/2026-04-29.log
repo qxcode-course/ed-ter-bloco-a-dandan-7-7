@@ -1,0 +1,15 @@
+2026-04-29 10:12:06, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-04-29 10:12:07, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100
+2026-04-29 10:12:08, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-29 10:15:28, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-29 10:21:13, MOVE, v:1, k:ed@lista_d1, mode:EDIT
+2026-04-29 10:21:55, MOVE, v:1, k:ed@lista_d1, mode:EDIT
+2026-04-29 10:29:48, EXEC, v:1, k:ed@lista_d1, mode:FULL, size:79, fail:COMP
+2026-04-29 10:30:02, EXEC, v:1, k:ed@lista_d1, mode:FULL, size:81, fail:COMP
+2026-04-29 10:30:52, MOVE, v:1, k:ed@lista_d1, mode:EDIT
+2026-04-29 10:57:37, MOVE, v:1, k:ed@lista_d1, mode:EDIT
+2026-04-29 11:02:11, MOVE, v:1, k:ed@lista_d1, mode:BACK
+2026-04-29 11:02:33, SELF, v:1, k:ed@bettersearch, self:1, rate:100, concept:1, problem:1, refactor:1
+2026-04-29 11:02:45, SELF, v:1, k:ed@setbuild, self:1, rate:100, concept:1, problem:1, refactor:1
+2026-04-29 11:12:33, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-29 11:12:33, EXEC, v:1, k:ed@lista_d1, mode:FULL, size:89, fail:COMP
