@@ -29,17 +29,17 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@list
 - ed@vector
-- ed@rec
+- ed@map_set
 - ed@basic
+- ed@rec
 flags:
   inbox: all
-  panel: logs
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d4
-selected_index: 53
+selected: ed@editorint
+selected_index: 59
