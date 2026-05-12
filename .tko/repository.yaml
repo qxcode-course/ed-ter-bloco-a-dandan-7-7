@@ -29,10 +29,10 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@vector
-- ed@rec
 - ed@list
+- ed@rec
+- ed@map_set
 - ed@basic
 flags:
   inbox: all

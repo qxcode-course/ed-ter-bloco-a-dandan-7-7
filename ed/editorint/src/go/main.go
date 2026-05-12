@@ -102,18 +102,64 @@ func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
-	if e.itChar.prev != e.itChar.root{
-		e.itLine.Value.Erase(e.itChar.Prev())
+	
+	if e.itChar != e.itLine.Value.Front() {
+ 
+        e.itChar = e.itLine.Value.Erase(e.itChar.Prev())
+        return 
+    }
 
-	}
+    if e.itLine == e.text.Front() {
+        return
+    }
+
+    linhaAtual := e.itLine
+    linhaDeCima := e.itLine.Prev()
+
+    novoFocoCursor := linhaDeCima.Value.End()
+
+    for eti := linhaAtual.Value.Front(); eti != linhaAtual.Value.End(); eti = eti.Next() {
+        novoNo := linhaDeCima.Value.Insert(linhaDeCima.Value.End(), eti.Value)
+        
+        if eti == linhaAtual.Value.Front() {
+            novoFocoCursor = novoNo
+        }
+    }
+
+    e.itLine = linhaDeCima
+    e.itChar = novoFocoCursor
+
+    e.text.Erase(linhaAtual)
+
+
 }
 
 func (e *Editor) KeyDelete() {
-	if e.itChar.next != e.itChar.root{
-		e.itLine.Value.Erase(e.itChar.Next())
+	if e.itChar != e.itLine.Value.End() {
+        
+        e.itChar = e.itLine.Value.Erase(e.itChar)
+        return 
+    }
 
-	}
-}
+	if e.itLine == e.text.Back() {
+        return
+    }
+
+	linhaDeBaixo := e.itLine.Next()
+    novoFocoCursor := e.itLine.Value.End()
+
+    for eti := linhaDeBaixo.Value.Front(); eti != linhaDeBaixo.Value.End(); eti = eti.Next() {
+        novoNo := e.itLine.Value.Insert(e.itLine.Value.End(), eti.Value)
+        if eti == linhaDeBaixo.Value.Front() {
+            novoFocoCursor = novoNo
+        }
+    }
+
+    e.itChar = novoFocoCursor
+    e.text.Erase(linhaDeBaixo)
+}	
+		
+
 
 func main() { // Texto inicial e posição do cursor
 	editor := NewEditor()
