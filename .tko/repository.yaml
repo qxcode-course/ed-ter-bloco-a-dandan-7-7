@@ -29,11 +29,11 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@list
-- ed@vector
 - ed@map_set
-- ed@basic
+- ed@vector
 - ed@rec
+- ed@list
+- ed@basic
 flags:
   inbox: all
   panel: graph
