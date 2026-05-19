@@ -6,40 +6,46 @@ sources:
   type: local
   writeable: true
   quests: null
-  tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 - name: origin
   target: https://github.com/qxcodeed/arcade
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 - name: eval1
   target: https://github.com/senapk/eval_26_ed_1
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 expanded:
-- ed@vector
+- ed@tree
+- origin@list
+- origin@rec
+- ed@dfs
+- ed@bfs
+- ed@linear
+- origin@map_set
+- origin@vector
+- origin@linear
+- origin@backtrack
+- ed@backtrack
 - ed@list
-- ed@rec
-- ed@map_set
-- ed@basic
+- origin@dfs
+- ed@vector
+- origin@basic
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@editorint
-selected_index: 59
+selected: ed@tree
+selected_index: 37
