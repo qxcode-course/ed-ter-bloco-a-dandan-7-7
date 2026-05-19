@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_10-17-34",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc afundarIlha(grid [][]byte, i, j, tami, tamj int) {\n    \n    if i < 0 || i >= tami || j < 0 || j >= tamj || grid[i][j] != '1' {\n        return\n    }\n   \n    grid[i][j] = '0'\n\n    afundarIlha(grid, i+1, j, tami, tamj) \n    afundarIlha(grid, i-1, j, tami, tamj) \n    afundarIlha(grid, i, j+1, tami, tamj) \n    afundarIlha(grid, i, j-1, tami, tamj) \n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n    if len(grid) == 0 {\n        return 0\n    }\n\n    cont := 0 \n    tami := len(grid)\n    tamj := len(grid[0])\n    \n    for i := 0; i < tami; i++ {\n        for j := 0; j < tamj; j++ {\n           \n            if grid[i][j] == '1' {\n                cont++\n               \n                afundarIlha(grid, i, j, tami, tamj)\n            }\n        }\n    }\n\n    return cont\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "62"
+        }
+    ]
+}
