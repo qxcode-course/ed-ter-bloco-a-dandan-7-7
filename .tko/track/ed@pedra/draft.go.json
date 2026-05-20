@@ -2,8 +2,48 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-20",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -23,620 +23,53 @@\n mt%22%0A\n-%0Atype jogador struct %7B%0A    pedra %5B2%5Dint%0A%7D%0A%0Afunc abs (a, b int) int%7B%0A    if a %3E b %7B%0A        return a - b%0A    %7D else %7B%0A        return b - a%0A    %7D%0A%7D%0Afunc main() %7B%0A   n := 0%0A   fmt.Scan(&n)%0A    vetor := make(%5B%5Djogador, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&vetor%5Bi%5D.pedra%5B0%5D, &vetor%5Bi%5D.pedra%5B1%5D)%0A    %7D%0A    D := make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        D%5Bi%5D = abs(vetor%5Bi%5D.pedra%5B0%5D, vetor%5Bi%5D.pedra%5B1%5D)%0A    %7D%0A    menor := D%5B0%5D%0A    for i := 1; i %3C n; i++ %7B%0A        if D%5Bi%5D %3C menor %7B%0A            menor = D%5Bi%5D%0A        %7D%0A    %7D%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Printf(%22%25d%5Cn%22, menor)%0A    %7D%0A%0A   \n+func main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-20_15-16-55",
+            "content": "@@ -563,17 +563,45 @@\n   %7D%0A    \n-%0A\n+for i := 0; i %3C n; i++ %7B%0A    \n     fmt.\n@@ -626,16 +626,17 @@\n or)%0A    \n+%7D\n %0A%0A   %0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-20_15-17-28",
+            "content": "@@ -520,60 +520,8 @@\n nor \n-&& vetor%5Bi%5D.pedra%5B0%5D %3E 10 && vetor%5Bi%5D.pedra%5B1%5D %3E 10 \n %7B%0A  \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-20_15-18-58",
+            "content": "@@ -467,24 +467,8 @@\n %5B0%5D%0A\n-    indice := 0%0A\n     \n@@ -599,31 +599,8 @@\n %5Bi%5D%0A\n-            indice = i%0A\n     \n@@ -643,18 +643,13 @@\n n%22, \n-indice + 1\n+menor\n )%0A  \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-20_15-19-46",
+            "content": "@@ -685,16 +685,19 @@\n  indice \n++ 1\n )%0A    %0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-20_15-19-53",
+            "content": "@@ -689,11 +689,8 @@\n ice \n-+ 1\n )%0A  \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-20_15-19-57",
+            "content": "@@ -329,17 +329,16 @@\n )%0A    %7D%0A\n-%0A\n     D :=\n@@ -357,47 +357,8 @@\n  n)%0A\n-    %0A%0A    menor := -1%0A    indice := -1%0A\n     \n@@ -390,19 +390,27 @@\n         \n-if \n+D%5Bi%5D = abs(\n vetor%5Bi%5D\n@@ -422,17 +422,9 @@\n a%5B0%5D\n- %3E= 10 &&\n+,\n  vet\n@@ -441,41 +441,106 @@\n a%5B1%5D\n- %3E= 10 %7B%0A            diff := abs(\n+)%0A    %7D%0A    menor := D%5B0%5D%0A    indice := 0%0A    for i := 1; i %3C n; i++ %7B%0A        if D%5Bi%5D %3C menor && \n veto\n@@ -544,33 +544,40 @@\n etor%5Bi%5D.pedra%5B0%5D\n-,\n+ %3E 10 &&\n  vetor%5Bi%5D.pedra%5B\n@@ -582,58 +582,16 @@\n a%5B1%5D\n-)%0A            if menor == -1 %7C%7C diff %3C menor %7B%0A   \n+ %3E 10 %7B%0A\n     \n@@ -602,17 +602,16 @@\n     \n- \n menor = \n diff\n@@ -610,17 +610,13 @@\n r = \n-diff%0A    \n+D%5Bi%5D%0A\n     \n@@ -646,94 +646,25 @@\n     \n-    %7D%0A   \n+%7D%0A\n     \n- \n %7D%0A    \n-%7D\n %0A    \n-if indice == -1 %7B%0A%09%09fmt.Println(%22sem ganhador%22)%0A%09%7D else %7B%0A%09%09\n fmt.\n@@ -688,17 +688,13 @@\n dice\n-)%0A%09%7D%0A    \n+ + 1)\n %0A   \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-20_15-26-24",
+            "content": "@@ -330,24 +330,43 @@\n %0A    %7D%0A%0A    \n+D := make(%5B%5Dint, n)\n %0A    %0A%0A    m\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-20_15-26-35",
+            "content": "package main\nimport \"fmt\"\n\ntype jogador struct {\n    pedra [2]int\n}\n\nfunc abs (a, b int) int{\n    if a > b {\n        return a - b\n    } else {\n        return b - a\n    }\n}\nfunc main() {\n   n := 0\n   fmt.Scan(&n)\n    vetor := make([]jogador, n)\n    for i := 0; i < n; i++ {\n        fmt.Scan(&vetor[i].pedra[0], &vetor[i].pedra[1])\n    }\n\n    \n    \n\n    menor := -1\n    indice := -1\n    for i := 0; i < n; i++ {\n        if vetor[i].pedra[0] >= 10 && vetor[i].pedra[1] >= 10 {\n            diff := abs(vetor[i].pedra[0], vetor[i].pedra[1])\n            if menor == -1 || diff < menor {\n                menor = diff\n                indice = i\n            }\n        }\n    }\n    if indice == -1 {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfmt.Printf(\"%d\\n\", indice)\n\t}\n    \n    \n\n   \n}\n",
+            "lines": "46"
         }
     ]
 }

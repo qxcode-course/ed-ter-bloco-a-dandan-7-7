@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-17",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -41,348 +41,35 @@\n     \n-var h, p, f, d int%0A    fmt.Scanf(%22%25d %25d %25d %25d%22, &h, &p, &f, &d)%0A%0A    for %7B%0A        if f == h%7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D%0A        if f == p%7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D%0A        if f %3E15%7B%0A            f = 0%0A        %7D%0A        if f %3C 0%7B%0A            f = 15%0A        %7D%0A        f += d%0A%0A    %7D\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-20_10-28-01",
+            "content": "@@ -371,9 +371,9 @@\n   f \n--\n++\n = d%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-20_10-29-05",
+            "content": "@@ -116,24 +116,8 @@\n r %7B%0A\n-         f += d%0A\n     \n@@ -364,16 +364,23 @@\n %0A       \n+ f -= d\n %0A%0A    %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-20_10-29-37",
+            "content": "@@ -132,107 +132,8 @@\n = d%0A\n-         if f %3E15%7B%0A             f = 0%0A         %7D%0A         if f %3C 0%7B%0A             f = 15%0A         %7D%0A\n     \n@@ -276,24 +276,117 @@\n k%0A        %7D%0A\n+        if f %3E15%7B%0A            f = 0%0A        %7D%0A        if f %3C 0%7B%0A            f = 15%0A        %7D%0A\n        %0A%0A   \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-20_10-29-50",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var h, p, f, d int\n    fmt.Scanf(\"%d %d %d %d\", &h, &p, &f, &d)\n\n    for {\n         f += d\n         if f >15{\n             f = 0\n         }\n         if f < 0{\n             f = 15\n         }\n        if f == h{\n            fmt.Println(\"S\")\n            break\n        }\n        if f == p{\n            fmt.Println(\"N\")\n            break\n        }\n       \n\n    }\n}\n",
+            "lines": "26"
         }
     ]
 }

@@ -35,3 +35,32 @@
 2026-05-19 10:17:18, MOVE, v:1, k:ed@ilhas, mode:EDIT
 2026-05-19 10:17:31, MOVE, v:1, k:ed@ilhas, mode:EDIT
 2026-05-19 10:44:27, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-05-19 12:30:56, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-05-19 12:30:57, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:5
+2026-05-19 12:33:42, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 12:36:47, EXEC, v:1, k:ed@distancia, mode:FULL, size:18, fail:COMP
+2026-05-19 12:36:54, EXEC, v:1, k:ed@distancia, mode:FULL, fail:COMP
+2026-05-19 12:36:56, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:18
+2026-05-19 12:37:11, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:18
+2026-05-19 12:37:13, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0
+2026-05-19 12:38:29, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 12:43:43, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 12:43:50, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:23
+2026-05-19 12:44:20, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:23
+2026-05-19 12:46:21, EXEC, v:1, k:ed@distancia, mode:FULL, size:26, fail:COMP
+2026-05-19 12:46:33, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:26
+2026-05-19 12:46:52, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:26
+2026-05-19 12:47:17, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:26
+2026-05-19 12:48:44, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 12:50:56, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:28
+2026-05-19 12:52:45, EXEC, v:1, k:ed@distancia, mode:FULL, size:33, fail:COMP
+2026-05-19 12:52:52, EXEC, v:1, k:ed@distancia, mode:FULL, size:33, fail:COMP
+2026-05-19 12:52:58, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:33
+2026-05-19 12:53:28, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:31
+2026-05-19 12:53:39, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 12:58:45, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 13:03:13, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 13:03:55, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 13:21:57, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-05-19 13:56:40, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-19 13:57:56, MOVE, v:1, k:ed@distancia, mode:EDIT

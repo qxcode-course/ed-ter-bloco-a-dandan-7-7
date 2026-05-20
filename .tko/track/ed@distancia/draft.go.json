@@ -1,0 +1,154 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_12-30-57",
+            "content": "@@ -10,38 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22strconv%22%0A)%0A\n func\n@@ -41,135 +41,35 @@\n     \n-var str string%0A    fmt.Scan(str)%0A%0A    vet := %5B%5Drune(str)%0A%0A    for i := 0; i %3C len(str); i++%7B%0A        fmt.Println(vet%5Bi%5D)%0A    %7D%0A%0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-19_12-36-47",
+            "content": "@@ -24,16 +24,25 @@\n %09%22fmt%22%0A%09\n+%22strconv%22\n %0A)%0Afunc \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-19_12-36-56",
+            "content": "@@ -127,19 +127,19 @@\n i %3C len(\n-vet\n+str\n ); i++%7B%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-19_12-37-11",
+            "content": "@@ -22,29 +22,14 @@\n (%0A%09%22\n-bufio%22%0A%09%22fmt%22%0A%09%0A%09%22os%22\n+fmt%22%0A%09\n %0A)%0Af\n@@ -68,82 +68,21 @@\n     \n-scan := bufio.NewReader(os.Stdin)%0A    str, _ = scan.ReadString('%5Cn')%0A    %0A\n+fmt.Scan(str)\n %0A%0A  \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-19_12-43-50",
+            "content": "@@ -235,18 +235,11 @@\n rint\n-f(%22%25c%5Cn%22, \n+ln(\n vet%5B\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-19_12-44-20",
+            "content": "@@ -42,19 +42,16 @@\n %09%22os%22%0A)%0A\n-%0A%0A%0A\n func mai\n@@ -79,19 +79,8 @@\n ing%0A\n-    L := 0%0A\n     \n@@ -156,29 +156,78 @@\n     \n-fmt.Scan(L\n+%0A%0A%0A    vet := %5B%5Drune(str\n )%0A\n+%0A\n     \n-%0A\n+for i := 0; i %3C len(vet); i++%7B%0A  \n     \n+  \n fmt.\n@@ -235,45 +235,31 @@\n rint\n-ln(L)%0A%0A    //vet := %5B%5Drune(str)%0A\n+f(%22%25c%5Cn%22, vet%5Bi%5D)\n %0A    \n+%7D\n %0A%0A%0A%7D\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-19_12-46-21",
+            "content": "@@ -207,16 +207,18 @@\n L)%0A%0A    \n+//\n vet := %5B\n@@ -232,19 +232,8 @@\n tr)%0A\n-    _ = vet\n %0A   \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-19_12-46-33",
+            "content": "@@ -178,35 +178,24 @@\n Scan(L)%0A    \n-fmt.Scan(L)\n %0A    fmt.Pri\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-19_12-46-52",
+            "content": "@@ -170,33 +170,25 @@\n     fmt.Scan\n-f(%22%25d%22, &\n+(\n L)%0A    fmt.S\n@@ -194,17 +194,9 @@\n Scan\n-f(%22%25d%22, &\n+(\n L)%0A \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-19_12-47-17",
+            "content": "@@ -37,18 +37,8 @@\n t%22%0A%09\n-%22strconv%22%0A\n %0A%09%22o\n@@ -82,22 +82,8 @@\n ing%0A\n-    num := %22%22%0A\n     \n@@ -170,66 +170,50 @@\n     \n-num, _ = scan.ReadString('%5Cn')%0A    L, _ = strconv.Atoi(num\n+fmt.Scanf(%22%25d%22, &L)%0A    fmt.Scanf(%22%25d%22, &L\n )%0A  \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-19_12-50-56",
+            "content": "@@ -190,20 +190,8 @@\n n')%0A\n-    %0A    /*%0A\n     \n@@ -253,32 +253,8 @@\n num)\n-%0A%0A    */%0A    fmt.Scan(L)\n %0A   \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-19_12-52-45",
+            "content": "@@ -96,10 +96,8 @@\n     \n-//\n num \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-19_12-52-52",
+            "content": "@@ -33,18 +33,16 @@\n %09%22fmt%22%0A%09\n-//\n %22strconv\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-19_12-52-58",
+            "content": "@@ -33,16 +33,18 @@\n %09%22fmt%22%0A%09\n+//\n %22strconv\n@@ -49,21 +49,8 @@\n nv%22%0A\n-    %22strings%22\n %0A%09%22o\n@@ -90,24 +90,26 @@\n  string%0A    \n+//\n num := %22%22%0A  \n@@ -195,24 +195,26 @@\n ')%0A    %0A    \n+/*\n %0A    num, _ \n@@ -241,42 +241,8 @@\n n')%0A\n-    num = strings.TrimSpace(num) %0A\n     \n@@ -265,16 +265,40 @@\n toi(num)\n+%0A%0A    */%0A    fmt.Scan(L)\n %0A    fmt\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-19_12-53-28",
+            "content": "@@ -70,363 +70,8 @@\n %0A)%0A%0A\n-func PodeColocar(vet %5B%5Drune, ind, L int, digito rune) bool%7B%0A%0A    inicio := ind - L%0A    if inicio %3C 0%7B%0A        inicio = 0%0A    %7D%0A%0A    fim := ind + L%0A    if inicio %3E= len(vet)%7B%0A        fim = len(vet) - 1%0A%0A    %7D%0A%0A%0A%0A%0A    return true%0A%7D%0A%0Afunc sla(vet %5B%5Drune, L, ind int) %7B%0A%0A    if ind+1 == len(vet)%7B%0A        return%0A    %7D%0A    if vet%5Bind%5D == '.'%7B%0A        %0A    %7D%0A%7D%0A\n %0A%0Afu\n@@ -306,16 +306,35 @@\n toi(num)\n+%0A    fmt.Println(L)\n %0A%0A    ve\n@@ -358,27 +358,20 @@\n     \n-%0A    sla(vet, L, 0)\n+_ = vet%0A    \n %0A%0A%0A%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-20_11-11-45",
+            "content": "@@ -278,111 +278,10 @@\n   %7D%0A\n-    for i:= inicio; i %3C fim; i++%7B%0A        if vet%5Bi%5D == digito%7B%0A            return false%0A        %7D%0A    %7D\n+%0A%0A\n %0A%0A  \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-20_11-13-08",
+            "content": "@@ -815,80 +815,8 @@\n  0)%0A\n-    for i:= 0; i %3C len(str); i++%7B%0A        fmt.Printf(%22%25c%22, vet%5Bi%5D)%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-05-20_11-15-06",
+            "content": "@@ -420,21 +420,16 @@\n %5Drune, L\n- rune\n , ind in\n@@ -433,16 +433,16 @@\n  int) %7B%0A\n+\n %0A    if \n@@ -516,295 +516,9 @@\n     \n+ \n-%0A%0A        for digito := '0'; digito %3C= L; digito++%7B%0A            if PodeColocar(vet, ind, int(L - '0'), digito)%7B%0A                vet%5Bind%5D = digito%0A                sla(vet, L, ind + 1)%0A                vet%5Bind%5D = '.'%0A            %7D%0A        %7D%0A        //tenho q fazer iterador de digito/indice\n %0A   \n@@ -569,17 +569,16 @@\n num := %22\n-0\n %22%0A    L \n@@ -766,29 +766,8 @@\n num)\n-%0A    n := %5B%5Drune(str)\n %0A%0A  \n@@ -809,20 +809,9 @@\n et, \n-rune(num%5B0%5D)\n+L\n , 0)\n@@ -882,23 +882,13 @@\n i%5D)%0A\n+\n     %7D\n-%0A    _ = L\n %0A%0A%7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-20_14-51-34",
+            "content": "@@ -1058,16 +1058,33 @@\n num)%0A   \n+ n := %5B%5Drune(str)\n %0A%0A    ve\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_14-51-47",
+            "content": "@@ -712,24 +712,38 @@\n             \n+vet%5Bind%5D = '.'\n %0A           \n@@ -1058,17 +1058,16 @@\n num)%0A   \n- \n %0A%0A    ve\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_14-53-07",
+            "content": "@@ -737,25 +737,24 @@\n %7D%0A        %7D%0A\n-%0A\n         //te\n@@ -801,33 +801,8 @@\n   %7D%0A\n-    sla(vet, L, ind + 1)%0A\n %7D%0A%0A%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_14-56-04",
+            "content": "@@ -449,18 +449,20 @@\n   if ind\n- %3E\n++1 =\n = len(ve\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-05-20_14-56-36",
+            "content": "@@ -220,19 +220,22 @@\n %0A    if \n-fim\n+inicio\n  %3E= len(\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-05-20_14-57-16",
+            "content": "@@ -958,41 +958,8 @@\n n')%0A\n-    str = strings.TrimSpace(str)%0A\n     \n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-05-20_15-00-27",
+            "content": "@@ -1245,26 +1245,8 @@\n  = L\n-%0A    fmt.Println()\n %0A%0A%7D%0A\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-05-20_15-01-00",
+            "content": "@@ -436,16 +436,11 @@\n int)\n- bool\n  %7B%0A\n+\n %0A   \n@@ -470,29 +470,24 @@\n       return\n- true\n %0A    %7D%0A    i\n@@ -674,19 +674,16 @@\n         \n-if \n sla(vet,\n@@ -694,18 +694,16 @@\n ind + 1)\n- %7B\n %0A       \n@@ -715,72 +715,8 @@\n     \n-    return true%0A                %7D%0A                vet%5Bind%5D = '.'\n %0A   \n@@ -793,27 +793,20 @@\n e%0A    %7D%0A\n+\n     \n-return \n sla(vet,\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-05-20_15-02-20",
+            "content": "@@ -294,17 +294,16 @@\n cio; i %3C\n-=\n  fim; i+\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_15-02-46",
+            "content": "@@ -819,29 +819,8 @@\n    %7D\n-%0A        return false\n %0A%0A  \n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_15-03-35",
+            "content": "@@ -401,24 +401,19 @@\n %7D%0A%0Afunc \n-Substuir\n+sla\n (vet %5B%5Dr\n@@ -688,24 +688,19 @@\n      if \n-Substuir\n+sla\n (vet, L,\n@@ -905,24 +905,19 @@\n  return \n-Substuir\n+sla\n (vet, L,\n@@ -1245,16 +1245,11 @@\n     \n-Substuir\n+sla\n (vet\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-05-20_15-04-35",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"strconv\"\n    \"strings\"\n\t\"os\"\n)\n\nfunc PodeColocar(vet []rune, ind, L int, digito rune) bool{\n\n    inicio := ind - L\n    if inicio < 0{\n        inicio = 0\n    }\n\n    fim := ind + L\n    if fim >= len(vet){\n        fim = len(vet) - 1\n\n    }\n    for i:= inicio; i <= fim; i++{\n        if vet[i] == digito{\n            return false\n        }\n    }\n\n    return true\n}\n\nfunc Substuir(vet []rune, L rune, ind int) bool {\n\n    if ind >= len(vet){\n        return true\n    }\n    if vet[ind] == '.'{\n       \n\n        for digito := '0'; digito <= L; digito++{\n            if PodeColocar(vet, ind, int(L - '0'), digito){\n                vet[ind] = digito\n                if Substuir(vet, L, ind + 1) {\n                    return true\n                }\n                vet[ind] = '.'\n            }\n        }\n        return false\n\n        //tenho q fazer iterador de digito/indice\n    }\n    return Substuir(vet, L, ind + 1)\n}\n\n\nfunc main() {\n    var str string\n    num := \"0\"\n    L := 0\n    scan := bufio.NewReader(os.Stdin)\n    str, _ = scan.ReadString('\\n')\n    str = strings.TrimSpace(str)\n    \n    \n    num, _ = scan.ReadString('\\n')\n    num = strings.TrimSpace(num) \n    L, _ = strconv.Atoi(num)\n    \n\n    vet := []rune(str)\n    \n    Substuir(vet, rune(num[0]), 0)\n    for i:= 0; i < len(str); i++{\n        fmt.Printf(\"%c\", vet[i])\n    }\n    _ = L\n    fmt.Println()\n\n}\n",
+            "lines": "80"
+        }
+    ]
+}

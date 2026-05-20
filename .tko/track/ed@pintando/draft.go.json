@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-13",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -17,22 +17,14 @@\n ort \n-%7B%0A    \n %22fmt%22%0A\n-%7D%0A\n func\n@@ -41,121 +41,35 @@\n     \n-var a, b, c int%0A    fmt.Scan(&a, &b, &c)%0A    p := (a + b + c) / 2%0A%0A    fmt.Println(math.sqrt(p*(p-a)*(p-b)*(p-c))\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-20_11-06-56",
+            "content": "@@ -29,19 +29,8 @@\n mt%22%0A\n-    %22math%22%0A\n %7D%0Afu\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-05-20_11-07-08",
+            "content": "@@ -40,19 +40,8 @@\n th%22%0A\n-    %22path%22%0A\n %7D%0Afu\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-05-20_11-07-14",
+            "content": "@@ -45,12 +45,12 @@\n    %22\n-list\n+path\n %22%0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-20_11-07-36",
+            "content": "@@ -151,18 +151,11 @@\n rint\n-f(%22%25.2f%22, \n+ln(\n math\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-20_11-08-26",
+            "content": "@@ -13,16 +13,17 @@\n %0Aimport \n+%7B\n %0A    %22fm\n@@ -29,17 +29,35 @@\n mt%22%0A    \n-%0A\n+%22math%22%0A    %22list%22%0A%7D\n %0Afunc ma\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-20_11-08-39",
+            "content": "@@ -10,17 +10,15 @@\n ain%0A\n-%0A\n import \n-(\n %0A   \n@@ -32,16 +32,8 @@\n     \n-%22math%22%0A)\n %0A%0Afu\n@@ -147,21 +147,13 @@\n ath.\n-S\n+s\n qrt(\n-float64(\n p*(p\n@@ -169,12 +169,11 @@\n *(p-c)))\n-)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-05-20_11-10-46",
+            "content": "@@ -149,10 +149,8 @@\n %25.2f\n-%5Cn\n %22, m\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-05-20_11-10-53",
+            "content": "@@ -70,23 +70,19 @@\n a, b, c \n-float64\n+int\n %0A    fmt\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-05-20_11-11-19",
+            "content": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc main() {\n    var a, b, c float64\n    fmt.Scan(&a, &b, &c)\n    p := (a + b + c) / 2\n\n    fmt.Printf(\"%.2f\\n\", math.Sqrt(float64(p*(p-a)*(p-b)*(p-c))))\n}\n",
+            "lines": "14"
         }
     ]
 }
