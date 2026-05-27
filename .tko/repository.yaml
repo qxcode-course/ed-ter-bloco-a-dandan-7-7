@@ -25,13 +25,15 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
-- ed@backtrack
-- ed@dfs
-- ed@linear
-- ed@basic
 - ed@list
+- ed@map_set
+- ed@basic
+- ed@dfs
+- ed@backtrack
+- ed@rec
+- ed@linear
 - ed@vector
+- ed@bfs
 flags:
   inbox: all
   panel: skills
@@ -39,5 +41,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@pedra
-selected_index: 4
+selected: ed@pintura
+selected_index: 82
