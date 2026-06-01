@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-30_22-48-04",
+            "content": "@@ -23,17 +23,16 @@\n %0A%09%22fmt%22%0A\n-%0A\n %09%0A)%0A%0Afun\n@@ -50,23 +50,23 @@\n %09v:=\n-NewQueue%5Brune%5D(\n+make(%5B%5Drune, 16\n )%0A%09f\n@@ -90,17 +90,14 @@\n %0A%09%09v\n-.Enqueue(\n+%5Bi%5D = \n 'A' \n@@ -109,15 +109,33 @@\n e(i)\n-) \n %0A%09%7D%0A\n+%09for i:=0;i%3C16;i++%7B\n %0A\n+%09\n %09fmt\n@@ -144,12 +144,25 @@\n rint\n-ln(v)\n+f(%22%25c, %22, v%5Bi%5D)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_22-52-47",
+            "content": "@@ -130,16 +130,11 @@\n rint\n-f(%22%25c%22, \n+ln(\n v)%0A%7D\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_22-53-04",
+            "content": "@@ -126,14 +126,21 @@\n mt.Print\n-(\n+f(%22%25c%22, \n v)%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_22-53-20",
+            "content": "@@ -131,15 +131,9 @@\n int(\n-rune(v)\n+v\n )%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_22-53-33",
+            "content": "@@ -127,13 +127,19 @@\n t.Print(\n-v\n+rune(v)\n )%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_22-54-06",
+            "content": "@@ -120,184 +120,8 @@\n %09%7D%0A%0A\n-%09//oitavas%0A%09a:= 0%0A%09b:= 0%0A%09%0A%09for i := range 8%7B%0A%09%09fmt.Scan(a, b)%0A%09%09t1 := v.Dequeue()%0A%09%09t2 := v.Dequeue()%0A%0A%09%09if a %3E b%7B%0A%09%09%09v.Enqueue(t1)%0A%09%09%7D else%7B%0A%09%09%09v.Enqueue(t2)%0A%09%09%7D%0A%09%09_ = i%0A%09%7D%0A%0A\n %09fmt\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-30_23-19-45",
+            "content": "@@ -163,10 +163,9 @@\n nge \n-15\n+8\n %7B%0A%09%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-30_23-20-53",
+            "content": "@@ -178,13 +178,11 @@\n can(\n-&\n a, \n-&\n b)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-30_23-24-06",
+            "content": "@@ -309,10 +309,8 @@\n rint\n-ln\n (v)%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-30_23-24-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\n\t\n)\n\nfunc main() {\n\tv:=NewQueue[rune]()\n\tfor i:=0;i<16;i++{\n\t\tv.Enqueue('A' + rune(i)) \n\t}\n\n\t//oitavas\n\ta:= 0\n\tb:= 0\n\t\n\tfor i := range 15{\n\t\tfmt.Scan(&a, &b)\n\t\tt1 := v.Dequeue()\n\t\tt2 := v.Dequeue()\n\n\t\tif a > b{\n\t\t\tv.Enqueue(t1)\n\t\t} else{\n\t\t\tv.Enqueue(t2)\n\t\t}\n\t\t_ = i\n\t}\n\n\tfmt.Println(v)\n}\n",
+            "lines": "33"
+        }
+    ]
+}

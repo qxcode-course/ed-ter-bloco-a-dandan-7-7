@@ -25,21 +25,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
-- ed@map_set
-- ed@basic
-- ed@dfs
-- ed@backtrack
-- ed@rec
 - ed@linear
-- ed@vector
-- ed@bfs
 flags:
   inbox: all
-  panel: skills
+  panel: logs
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@pintura
-selected_index: 82
+selected: ed@queimando
+selected_index: 11

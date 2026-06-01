@@ -1,0 +1,44 @@
+2026-05-27 15:09:12, MOVE, v:1, k:ed@fila_enc, mode:DOWN
+2026-05-27 15:09:13, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-27 15:09:12, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:09:12, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:09:12, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:19:07, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:26:49, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:27:28, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:90
+2026-05-27 15:28:50, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:91
+2026-05-27 15:31:00, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:92
+2026-05-27 15:31:01, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0
+2026-05-27 15:30:59, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:35:33, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:36:02, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:36:16, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:36:23, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:36:29, EXEC, v:1, k:ed@fila_enc, mode:FULL, size:102, fail:COMP
+2026-05-27 15:36:29, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:37:01, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:39:34, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:40:36, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:102
+2026-05-27 15:41:17, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:104
+2026-05-27 15:41:13, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:41:58, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:98
+2026-05-27 15:44:29, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:33, size:100
+2026-05-27 15:46:10, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:51:07, EXEC, v:1, k:ed@fila_enc, mode:FULL, size:110, fail:COMP
+2026-05-27 15:51:08, EXEC, v:1, k:ed@fila_enc, mode:FULL, fail:COMP
+2026-05-27 15:50:37, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:56:09, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:33, size:118
+2026-05-27 15:56:05, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 15:58:34, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:66, size:118
+2026-05-27 16:01:33, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 16:02:35, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:100, size:130
+2026-05-27 16:02:37, MOVE, v:1, k:ed@fila_enc, mode:BACK
+2026-05-27 16:02:41, SELF, v:1, k:ed@fila_enc, self:1, rate:100
+2026-05-27 16:02:32, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 16:31:29, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 16:31:32, MOVE, v:1, k:ed@pilha, mode:PICK
+2026-05-27 16:31:29, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 16:31:29, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 16:31:29, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 16:31:29, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 16:32:34, MOVE, v:1, k:ed@pilha, mode:BACK
