@@ -1,0 +1,12 @@
+2026-06-01 12:59:45, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-01 13:02:36, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:114
+2026-06-01 13:03:33, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-06-01 13:03:36, SELF, v:1, k:ed@queimando, self:1, rate:100
+2026-06-01 13:02:34, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-06-01 13:07:39, MOVE, v:1, k:ed@pilhado, mode:DOWN
+2026-06-01 13:07:40, MOVE, v:1, k:ed@pilhado, mode:PICK
+2026-06-01 13:07:48, EXEC, v:1, k:ed@pilhado, mode:FULL, size:41, fail:COMP
+2026-06-01 13:07:39, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-06-01 13:07:39, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-06-01 13:09:07, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-06-01 13:07:39, MOVE, v:1, k:ed@pilhado, mode:EDIT

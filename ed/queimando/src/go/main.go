@@ -13,21 +13,34 @@ type Pos struct {
 func burnTrees(grid [][]rune, l, c int) {
 	stack := NewStack[Pos]()
 	
-	if l < 0 || c < 0 || l >= len(grid) || c >= len(grid[0]){
-		return
-	}
+	// if l < 0 || c < 0 || l >= len(grid) || c >= len(grid[0]){
+	// 	return
+	// }
 
-	if grid[l][c] == '.' || grid[l][c] == 'o'{
-		return
-	}
+	// if grid[l][c] == '.' || grid[l][c] == 'o'{
+	// 	return
+	// }
 
 	stack.Push(Pos{l, c})
 	
 	for !stack.IsEmpty(){
 		atual := stack.Pop()
-		grid[l][c] = 'o'
+		
 
-		_ = atual
+		if atual.l < 0 || atual.c < 0 || atual.l >= len(grid) || atual.c >= len(grid[0]){
+			continue
+		}
+
+		if grid[atual.l][atual.c] == '.' || grid[atual.l][atual.c] == 'o'{
+			continue
+		}
+		grid[atual.l][atual.c] = 'o'
+
+		stack.Push(Pos{atual.l - 1, atual.c})
+		stack.Push(Pos{atual.l + 1, atual.c})
+		stack.Push(Pos{atual.l, atual.c - 1})
+		stack.Push(Pos{atual.l, atual.c + 1})
+	
 
 		
 	}
