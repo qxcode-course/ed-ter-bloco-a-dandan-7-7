@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-26",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -23,541 +23,53 @@\n mt%22%0A\n-%0Atype Pos struct%7B%0A    x int%0A    y int%0A%0A%7D%0A%0A%0Afunc main() %7B%0A    q := 0%0A    var d rune%0A    fmt.Scan(&q, &d)%0A%0A    p := make(%5B%5DPos, q)%0A%0A    for i := 0; i%3C q; i++%7B%0A        fmt.Scan(&p%5Bi%5D.x, &p%5Bi%5D.y)%0A%0A    %7D%0A%0A    for i:=1; i %3C q; i++%7B%0A%0A        p%5Bi%5D = p%5Bi-1%5D%0A%0A        if i == 1%7B%0A            if d == 'L'%7B%0A                p%5B0%5D.x -= 1%0A                %0A            %7D else if d == 'R'%7B%0A                p%5B0%5D.x += 1%0A            %7D else if d == 'U'%7B%0A                p%5B0%5D.y -=1%0A            %7Delse%7B%0A                p%5B0%5D.y += 1%0A            %7D%0A        %7D%0A    %7D\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-06-08_13-45-41",
+            "content": "@@ -558,88 +558,6 @@\n   %7D%0A\n-%0A    for i := 0; i %3C q; i++%7B%0A        fmt.Printf(%22%25d %25d%5Cn%22, p%5Bi%5D.x, p%5Bi%5D.y)%0A    %7D%0A%0A\n %7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-08_13-48-45",
+            "content": "@@ -250,227 +250,30 @@\n +%7B%0A%0A\n-%0A        if d == 'L'%7B%0A        p%5Bi%5D = p%5Bi-1%5D%0A            %0A        %7D else if d == 'R'%7B%0A            p%5Bi%5D = p%5Bi+1%5D%0A        %7D else if d == 'U'%7B%0A            p%5Bi%5D = p%5Bi - 1%5D%0A        %7Delse%7B%0A            p%5Bi%5D = p%5Bi + 1%5D%0A        %7D\n+        p%5Bi%5D = p%5Bi-1%5D%0A\n %0A   \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-08_13-54-09",
+            "content": "@@ -247,32 +247,44 @@\n  i++%7B%0A%0A%0A        \n+if d == 'L'%7B\n %0A        p%5Bi%5D = \n@@ -290,16 +290,191 @@\n  p%5Bi-1%5D%0A\n+            %0A        %7D else if d == 'R'%7B%0A            p%5Bi%5D = p%5Bi+1%5D%0A        %7D else if d == 'U'%7B%0A            p%5Bi%5D = p%5Bi - 1%5D%0A        %7Delse%7B%0A            p%5Bi%5D = p%5Bi + 1%5D%0A        %7D\n %0A       \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-08_13-54-26",
+            "content": "@@ -234,27 +234,21 @@\n  i:=\n-q - \n 1; i \n-%3E= 1 ; i--\n+%3C q; i++\n %7B%0A%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-08_13-59-13",
+            "content": "@@ -297,29 +297,27 @@\n     \n-%0A            \n+if i == 1%7B\n %0A    \n-%7D%0A%0A\n+    \n     \n@@ -329,16 +329,24 @@\n == 'L'%7B%0A\n+        \n         \n@@ -365,25 +365,37 @@\n             \n-%0A\n+    %0A        \n     %7D else i\n@@ -410,24 +410,32 @@\n R'%7B%0A        \n+ \n+       \n p%5B0%5D.x += 1%0A\n@@ -430,24 +430,32 @@\n p%5B0%5D.x += 1%0A\n+        \n     %7D else i\n@@ -466,16 +466,24 @@\n == 'U'%7B%0A\n+        \n         \n@@ -493,16 +493,24 @@\n %5D.y -=1%0A\n+        \n     %7Dels\n@@ -516,24 +516,32 @@\n se%7B%0A        \n+      \n+  \n p%5B0%5D.y += 1%0A\n@@ -544,18 +544,41 @@\n = 1%0A    \n+        %7D%0A        %7D%0A    \n %7D\n-%0A\n %0A%0A    fo\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-08_14-01-35",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -39,28 +39,35 @@\n ruct\n- \n %7B%0A\n-%09\n+    \n x int%0A\n-%09\n+    \n y int%0A\n+%0A\n %7D%0A%0A\n+%0A\n func\n@@ -80,17 +80,23 @@\n ) %7B%0A\n-%09\n+    \n q := 0%0A\n-%09\n+    \n var \n@@ -102,17 +102,20 @@\n  d rune%0A\n-%09\n+    \n fmt.Scan\n@@ -124,17 +124,20 @@\n q, &d)%0A%0A\n-%09\n+    \n p := mak\n@@ -149,17 +149,20 @@\n os, q)%0A%0A\n-%09\n+    \n for i :=\n@@ -162,33 +162,32 @@\n or i := 0; i\n- \n %3C q; i++\n  %7B%0A%09%09fmt.Sca\n@@ -170,29 +170,34 @@\n 0; i%3C q; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Scan(&p%5B\n@@ -212,30 +212,34 @@\n %5Bi%5D.y)%0A%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n for i\n- \n :=\n- \n q - 1; i\n@@ -247,113 +247,205 @@\n %3E= 1\n+ \n ; i--\n- \n %7B%0A%0A\n-%09%09p%5Bi%5D = p%5Bi-1%5D%0A%0A%09%7D%0A%0A%09switch d %7B%0A%09case 'L':%0A%09%09p%5B0%5D.x -= 1%0A%09case 'R':%0A%09%09p%5B0%5D.x += 1%0A%09case 'U':%0A%09%09\n+%0A        %0A        p%5Bi%5D = p%5Bi-1%5D%0A%0A        %0A            %0A    %7D%0A%0A    if d == 'L'%7B%0A        p%5B0%5D.x -= 1%0A            %0A    %7D else if d == 'R'%7B%0A        p%5B0%5D.x += 1%0A    %7D else if d == 'U'%7B%0A        \n p%5B0%5D\n@@ -453,40 +453,53 @@\n y -=\n- \n 1%0A\n-%09default:%0A%09%09p%5B0%5D.y += 1%0A%09%7D%0A%0A%09\n+    %7Delse%7B%0A        p%5B0%5D.y += 1%0A    %7D%0A%0A%0A    \n for \n@@ -520,13 +520,18 @@\n  i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.\n@@ -568,9 +568,12 @@\n .y)%0A\n-%09\n+    \n %7D%0A%0A%7D\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-08_14-02-26",
+            "content": "@@ -335,20 +335,16 @@\n = 1%0A\n-    case 'D'\n+%09default\n :%0A%09%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-08_14-02-58",
+            "content": "@@ -103,19 +103,9 @@\n Scan\n-f(%22%25d %25c%22, \n+(\n &q, \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-08_14-06-15",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Pos struct {\n\tx int\n\ty int\n}\n\nfunc main() {\n\tq := 0\n\tvar d rune\n\tfmt.Scanf(\"%d %c\", &q, &d)\n\n\tp := make([]Pos, q)\n\n\tfor i := 0; i < q; i++ {\n\t\tfmt.Scan(&p[i].x, &p[i].y)\n\n\t}\n\n\tfor i := q - 1; i >= 1; i-- {\n\n\t\tp[i] = p[i-1]\n\n\t}\n\n\tswitch d {\n\tcase 'L':\n\t\tp[0].x -= 1\n\tcase 'R':\n\t\tp[0].x += 1\n\tcase 'U':\n\t\tp[0].y -= 1\n    case 'D':\n\t\tp[0].y += 1\n\t}\n\n\tfor i := 0; i < q; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", p[i].x, p[i].y)\n\t}\n\n}\n",
+            "lines": "43"
         }
     ]
 }

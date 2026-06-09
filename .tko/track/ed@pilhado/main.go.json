@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-06-01_13-07-48",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n",
+            "content": "@@ -45,147 +45,4 @@\n %0A)%0A%0A\n-func main() %7B%0A%09var l, c int%0A%09fmt.Scanf(%22%25d %25d%22, &l, &c)%0A%0A%09grid := make(%5B%5D%5B%5Drune, l)%0A%09for i := range grid %7B%0A%09%09grid%5Bi%5D = make(%5B%5Drune, c)%0A%09%7D%0A%09%0A%7D%0A%0A\n",
             "lines": "8"
+        },
+        {
+            "label": "2026-06-02_14-18-31",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc main() {\n\tvar l, c int\n\tfmt.Scanf(\"%d %d\", &l, &c)\n\n\tgrid := make([][]rune, l)\n\tfor i := range grid {\n\t\tgrid[i] = make([]rune, c)\n\t}\n\t\n}\n\n",
+            "lines": "19"
         }
     ]
 }

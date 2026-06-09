@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-24",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -41,368 +41,35 @@\n     \n-n := 0; f := 0%0A    fmt.Scan(&f, &n)%0A    %0A    fig := map%5Bint%5Dint%7B%7D%0A%0A    for i :=0; i %3C n; i++%7B%0A        c := 0%0A        fmt.Scan(&c)%0A        %0A        if fig%5Bc%5D %3E 0%7B%0A            fig%5Bc%5D++%0A        %7Delse%7B%0A            fig%5Bc%5D = 0%0A        %7D%0A%0A    %7D%0A%0A    for i := 0; i%3Cn; i++%7B%0A        if fig%5Bi%5D%3E1%7B%0A            fmt.Printf(%22%25d %22, fig%5Bi%5D)%0A            fig%5Bi%5D--%0A        %7D%0A    %7D%0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-06-04_21-27-38",
+            "content": "@@ -323,11 +323,10 @@\n g%5Bi%5D\n-==0\n+%3E1\n %7B%0A  \n@@ -365,32 +365,40 @@\n i%5D)%0A            \n+fig%5Bi%5D--\n %0A        %7D%0A    %7D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-04_21-28-12",
+            "content": "@@ -323,10 +323,11 @@\n g%5Bi%5D\n-!i\n+==0\n %7B%0A  \n@@ -354,16 +354,22 @@\n (%22%25d %22, \n+fig%5Bi%5D\n )%0A      \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-04_21-28-37",
+            "content": "@@ -320,17 +320,16 @@\n  fig%5Bi%5D!\n-=\n i%7B%0A     \n@@ -353,17 +353,16 @@\n (%22%25d %22, \n-i\n )%0A      \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-04_21-28-43",
+            "content": "@@ -220,16 +220,54 @@\n ig%5Bc%5D++%0A\n+        %7Delse%7B%0A            fig%5Bc%5D = 0%0A\n         \n@@ -294,17 +294,17 @@\n := 0; i%3C\n-f\n+n\n ; i++%7B%0A \n@@ -323,10 +323,11 @@\n g%5Bi%5D\n-%3E1\n+!=i\n %7B%0A  \n@@ -373,16 +373,8 @@\n     \n-fig%5Bi%5D--\n %0A   \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-04_21-30-56",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    n := 0; f := 0\n    fmt.Scan(&f, &n)\n    \n    fig := map[int]int{}\n\n    for i :=0; i < n; i++{\n        c := 0\n        fmt.Scan(&c)\n        \n        if fig[c] > 0{\n            fig[c]++\n        }\n\n    }\n\n    for i := 0; i<f; i++{\n        if fig[i]>1{\n            fmt.Printf(\"%d \", i)\n            fig[i]--\n        }\n    }\n\n}\n",
+            "lines": "26"
         }
     ]
 }

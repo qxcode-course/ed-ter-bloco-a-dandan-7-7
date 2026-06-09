@@ -25,13 +25,20 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@map_set
+- ed@basic
+- ed@rec
 - ed@linear
+- ed@vector
+- ed@list
+- ed@tree
+- ed@backtrack
 flags:
   inbox: all
-  panel: logs
+  panel: graph
   show_panel: 'true'
-  task_graph_mode: executions
+  task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@queimando
-selected_index: 11
+selected: ed@map_set
+selected_index: 8

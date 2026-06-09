@@ -1,0 +1,6 @@
+2026-06-03 09:35:51, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-06-03 09:35:52, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:32
+2026-06-03 09:35:55, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-06-03 09:38:43, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-06-03 09:38:44, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33
+2026-06-03 09:38:45, MOVE, v:1, k:ed@iterador, mode:BACK

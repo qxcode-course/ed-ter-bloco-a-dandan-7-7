@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-05-02_14-51-22",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -41,314 +41,35 @@\n     \n-qtd := 0%0A%0A    n := 0%0A    fmt.Scan(&n)%0A    var v %5B%5Dint%0A%0A    %0A    for i:= 0; i %3C n; i++%7B%0A        fmt.Scan(&v%5Bi%5D)%0A    %7D%0A%0A    for i := 0; i %3C n; i++%7B%0A        for j := i +1; j %3C n; j++%7B%0A            if v%5Bi%5D == v%5Bj%5D*-1%7B%0A                qtd++%0A                break%0A            %7D%0A        %7D%0A    %7D%0A    fmt.Println(qtd\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-06-04_20-35-16",
+            "content": "@@ -84,25 +84,18 @@\n    v\n-:= make(\n+ar v \n %5B%5Dint\n-, n)\n %0A%0A  \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-04_20-36-09",
+            "content": "@@ -283,50 +283,8 @@\n d++%0A\n-                v%5Bi%5D = 0%0A                %0A\n     \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-04_20-37-03",
+            "content": "@@ -300,24 +300,40 @@\n    v%5Bi%5D = 0%0A\n+                \n %0A           \n@@ -329,32 +329,37 @@\n                 \n+break\n %0A            %7D%0A \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-04_20-37-58",
+            "content": "@@ -295,16 +295,24 @@\n         \n+v%5Bi%5D = 0\n %0A%0A      \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-04_20-40-07",
+            "content": "@@ -299,13 +299,26 @@\n     \n-break\n+%0A%0A                \n %0A   \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-04_20-40-39",
+            "content": "@@ -207,17 +207,20 @@\n or j := \n-0\n+i +1\n ; j %3C n;\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-04_20-47-02",
+            "content": "@@ -351,10 +351,8 @@\n (qtd\n-/2\n )%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-04_20-47-16",
+            "content": "@@ -79,40 +79,30 @@\n &n)%0A\n-%0A\n     \n-descasados := map%5Bint%5Dint%7B%7D\n+v:= make(%5B%5Dint, n)\n %0A%0A  \n@@ -135,28 +135,8 @@\n ++%7B%0A\n-        animal := 0%0A\n     \n@@ -153,172 +153,156 @@\n an(&\n-animal)%0A\n+v%5Bi%5D)\n %0A    \n+%7D%0A%0A\n     \n-par := animal * -1%0A%0A        if descasados%5Bpar%5D %3E0%7B%0A            qtd++%0A            descasados%5Bpar%5D--%0A        %7D else%7B%0A            descasados%5Banimal%5D++\n+for i := 0; i %3C n; i++%7B%0A        for j := 0; j %3C n; j++%7B%0A            if v%5Bi%5D == v%5Bj%5D*-1%7B%0A                qtd++%0A                break\n %0A   \n@@ -306,24 +306,25 @@\n             \n+%7D\n %0A        %7D%0A%0A\n@@ -326,21 +326,13 @@\n   %7D%0A\n-%0A%0A\n     %7D\n-%0A%0A    \n %0A   \n@@ -347,12 +347,14 @@\n ntln(qtd\n+/2\n )%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-04_21-10-23",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    qtd := 0\n\n    n := 0\n    fmt.Scan(&n)\n\n    descasados := map[int]int{}\n\n    \n    for i:= 0; i < n; i++{\n        animal := 0\n        fmt.Scan(&animal)\n\n        par := animal * -1\n\n        if descasados[par] >0{\n            qtd++\n            descasados[par]--\n        } else{\n            descasados[animal]++\n            \n        }\n\n\n    }\n\n    \n    fmt.Println(qtd)\n}\n",
+            "lines": "31"
         }
     ]
 }
