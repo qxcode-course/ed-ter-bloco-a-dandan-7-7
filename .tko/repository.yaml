@@ -25,20 +25,20 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@vector
+- ed@rec
+- ed@tree
+- ed@linear
+- ed@list
 - ed@map_set
 - ed@basic
-- ed@rec
-- ed@linear
-- ed@vector
-- ed@list
-- ed@tree
 - ed@backtrack
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@map_set
-selected_index: 8
+selected: ed@soma
+selected_index: 82
