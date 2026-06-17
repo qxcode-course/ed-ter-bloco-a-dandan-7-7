@@ -25,20 +25,22 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
 - ed@rec
-- ed@tree
-- ed@linear
+- ed@backtrack
 - ed@list
+- ed@linear
+- ed@vector
+- ed@tree
 - ed@map_set
 - ed@basic
-- ed@backtrack
 flags:
   inbox: all
   panel: skills
-  show_panel: 'false'
   task_graph_mode: time
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@soma
-selected_index: 82
+selected: ed@arvore-path
+selected_index: 85
