@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_20-28-04",
+            "content": "@@ -538,139 +538,8 @@\n %5D%22)%0A\n-%0A%0A%09if len(vet)== len(aux)-1%7B%0A%09%09fmt.Printf(%22%5B %22)%0A%0A%09for i:= 0; i %3C len(vet);i++%7B%0A%09%09fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A%09%7D%0A%09fmt.Println(%22%5D%22)%0A%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-17_20-29-50",
+            "content": "@@ -548,18 +548,16 @@\n len(vet)\n--1\n == len(a\n@@ -559,16 +559,18 @@\n len(aux)\n+-1\n %7B%0A%09%09fmt.\n@@ -583,17 +583,16 @@\n (%22%5B %22)%0A%0A\n-%09\n %09for i:=\n@@ -613,17 +613,16 @@\n t);i++%7B%0A\n-%09\n %09%09fmt.Pr\n@@ -641,21 +641,19 @@\n vet%5Bi%5D)%0A\n-%09\n %09%7D%0A\n-%09\n %09fmt.Pri\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-17_20-30-16",
+            "content": "@@ -1,1022 +1,472 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Afunc processa(vet %5B%5Dint) %7B%0A%09_ = vet;%0A%09// 1. defina o ponto de parada%0A%09if len(vet) %3C 1 %7B%0A%09%09return%0A%09%7D%0A%09// 2. monte o vetor auxiliar com os resultados das somas%0A%09aux := make(%5B%5Dint, len(vet)-1)%0A%0A%09for i := 1; i %3C len(vet); i++%7B%0A%09%09aux%5Bi-1%5D= vet%5Bi%5D + vet%5Bi-1%5D%0A%09%7D%0A%0A%09// 3. chame recursivamente a fun%C3%A7%C3%A3o processa para o vetor auxiliar%0A%09processa(aux)%0A%09// 4. imprima o vetor original%0A%09fmt.Printf(%22%5B %22)%0A%0A%09for i:= 0; i %3C len(vet);i++%7B%0A%09%09fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A%09%7D%0A%09fmt.Println(%22%5D%22)%0A%0A%0A%09%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09line := scanner.Text()%0A%09parts := strings.Fields(line)%0A%09vet := %5B%5Dint%7B%7D%0A%09for _, part := range parts %7B%0A%09%09if value, err := strconv.Atoi(part); err == nil %7B%0A%09%09%09vet = append(vet, value)%0A%09%09%7D%0A%09%7D%0A%09processa(vet)%0A%7D%0A%0Afunc Join%5BT any%5D(v %5B%5DT, sep string) string %7B%0A%09if\n+@@ -455,16 +455,145 @@%0A (%2522%255B %2522)%250A%250A%0A+%2509for i:= 0; i %253C len(aux);i++%257B%250A%2509%2509fmt.Printf(%2522%2525d %2522, aux%255Bi%255D)%250A%2509%257D%250A%2509fmt.Println(%2522%255D%2522)%250A%250A%250A%2509if len(vet)-1== len(aux)%257B%250A%2509%2509fmt.Printf(%2522%255B %2522)%250A%250A%2509%0A %2509for i:=%0A@@ -610,24 +610,25 @@%0A n(vet);i++%257B%250A%0A+%2509%0A %2509%2509fmt.Printf%0A@@ -639,27 +639,29 @@%0A  %2522, vet%255Bi%255D)%250A%0A+%2509%0A %2509%257D%250A%0A+%2509%0A %2509fmt.Println%0A@@ -666,19 +666,18 @@%0A\n  l\n-e\n n(\n-v) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09s := %22%22%0A%09for i, x := range v %7B%0A%09%09if i %3E 0 %7B%0A%09%09%09s += sep%0A%09%09%7D%0A%09%09s += fmt.Sprintf(%22%25v%22, x)%0A%09%7D%0A%09return s%0A%7D\n+%2522%255D%2522)%250A%0A-%250A%250A%0A %2509%0A+%257D%0A %250A%257D%250A%250Afunc\n %0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-06-17_20-31-24",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\t_ = vet;\n\t// 1. defina o ponto de parada\n\tif len(vet) < 1 {\n\t\treturn\n\t}\n\t// 2. monte o vetor auxiliar com os resultados das somas\n\taux := make([]int, len(vet)-1)\n\n\tfor i := 1; i < len(vet); i++{\n\t\taux[i-1]= vet[i] + vet[i-1]\n\t}\n\n\t// 3. chame recursivamente a fun\u00e7\u00e3o processa para o vetor auxiliar\n\tprocessa(aux)\n\t// 4. imprima o vetor original\n\tfmt.Printf(\"[ \")\n\n\tfor i:= 0; i < len(vet);i++{\n\t\tfmt.Printf(\"%d \", vet[i])\n\t}\n\tfmt.Println(\"]\")\n\n\n\t\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "66"
+        }
+    ]
+}

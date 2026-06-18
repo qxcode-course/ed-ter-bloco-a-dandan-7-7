@@ -27,8 +27,113 @@
         },
         {
             "label": "2026-06-04_21-30-56",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    n := 0; f := 0\n    fmt.Scan(&f, &n)\n    \n    fig := map[int]int{}\n\n    for i :=0; i < n; i++{\n        c := 0\n        fmt.Scan(&c)\n        \n        if fig[c] > 0{\n            fig[c]++\n        }\n\n    }\n\n    for i := 0; i<f; i++{\n        if fig[i]>1{\n            fmt.Printf(\"%d \", i)\n            fig[i]--\n        }\n    }\n\n}\n",
+            "content": "@@ -184,25 +184,42 @@\n         \n-%0A\n+if fig%5Bc%5D %3E 0%7B%0A   \n         \n fig%5Bc%5D++\n@@ -206,24 +206,25 @@\n %0A           \n+ \n fig%5Bc%5D++%0A   \n@@ -228,16 +228,17 @@\n         \n+%7D\n %0A%0A    %7D%0A\n@@ -255,14 +255,13 @@\n  := \n-1\n+0\n ; i%3C\n-=\n f; i\n",
             "lines": "26"
+        },
+        {
+            "label": "2026-06-17_12-59-39",
+            "content": "@@ -41,52 +41,17 @@\n     \n-qtdttl := 0%0A    fmt.Scan(&qtdttl)%0A    qtdbar\n+n := 0; f\n  := \n@@ -70,45 +70,44 @@\n an(&\n-qtdbar\n+f, &n\n )%0A\n+    %0A\n     fig\n+ \n := ma\n-ke(%5B%5Dint, qtdbar)\n+p%5Bint%5Dint%7B%7D\n %0A%0A  \n@@ -117,24 +117,19 @@\n or i\n+ \n :=\n- \n 0; i %3C \n-qtdbar\n+n\n ; i+\n@@ -143,27 +143,80 @@\n     \n-fmt.Scan((&fig%5Bi%5D))\n+c := 0%0A        fmt.Scan(&c)%0A        %0A        %0A        fig%5Bc%5D++%0A        %0A\n %0A   \n@@ -232,24 +232,19 @@\n or i\n+ \n := 1; i\n- %3C qtdbar\n+%3C=f\n ; i+\n@@ -267,20 +267,10 @@\n g%5Bi%5D\n- == fig%5Bi-1%5D\n+%3E1\n %7B%0A  \n@@ -292,32 +292,45 @@\n rint\n-(fig%5Bi%5D, %22 %22)%0A        %7D%0A\n+f(%22%25d %22, i)%0A            fig%5Bi%5D--%0A    \n     \n@@ -339,20 +339,9 @@\n     \n-fmt.Println()\n+%7D%0A\n %0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-17_13-05-12",
+            "content": "@@ -210,24 +210,8 @@\n   %7D%0A\n-    ver := false\n %0A   \n@@ -317,75 +317,9 @@\n     \n-    ver = true%0A        %7D%0A    %7D%0A    if !ver %7B%0A        fmt.Print(%22N%22)\n+%7D\n %0A   \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-06-17_13-06-03",
+            "content": "@@ -210,39 +210,8 @@\n   %7D%0A\n-%0A    cnt := make(map%5Bint%5Dint)%0A%0A\n     \n@@ -358,339 +358,26 @@\n   %7D%0A\n-%0A        if cnt%5Bfig%5Bi%5D%5D %3E 0%7B%0A            cnt%5Bfig%5Bi%5D%5D++%0A        %7D else%7B%0A            cnt%5Bfig%5Bi%5D%5D = 1%0A        %7D%0A%0A    %7D%0A    if !ver %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A    fmt.Println()%0A%0A    ver = false%0A    for i:= 0; i %3C qtdttl; i++%7B%0A        if cnt%5Bi%5D == 0%7B%0A            fmt.Print(i, %22 %22)%0A            ver = true%0A        %7D%0A    %7D%0A%0A    if !ver\n+    %7D%0A    if !ver \n %7B%0A  \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-17_13-11-02",
+            "content": "@@ -583,33 +583,33 @@\n lse%0A    for i:= \n-1\n+0\n ; i %3C qtdttl; i+\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-17_13-11-10",
+            "content": "@@ -349,85 +349,14 @@\n g%5Bi%5D\n-)%0A%0A            if i != qtdbar-1%7B%0A                fmt.Print(%22 %22)%0A            %7D\n+, %22 %22)\n %0A   \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-17_13-11-42",
+            "content": "@@ -1,759 +1,56 @@\n-package main%0Aimport %22fmt%22%0Afunc main() %7B%0A    qtdttl := 0%0A    fmt.Scan(&qtdttl)%0A    qtdbar := 0%0A    fmt.Scan(&qtdbar)%0A    fig:= make(%5B%5Dint, qtdbar)%0A%0A    for i:= 0; i %3C qtdbar; i++%7B%0A        fmt.Scan((&fig%5Bi%5D))%0A    %7D%0A%0A    cnt := make(map%5Bint%5Dint)%0A%0A    ver := false%0A    for i:= 1; i %3C qtdbar; i++%7B%0A        if fig%5Bi%5D == fig%5Bi-1%5D%7B%0A            fmt.Print(fig%5Bi%5D)%0A%0A            if i %3C qtdbar-1%7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            ver = true%0A        %7D%0A%0A        if cnt%5Bfig%5Bi%5D%5D %3E 0%7B%0A            cnt%5Bfig%5Bi%5D%5D++%0A        %7D else%7B%0A            cnt%5Bfig%5Bi%5D%5D = 1%0A        %7D%0A%0A    %7D%0A   \n+@@ -733,84 +733,14 @@%0A nt(i%0A-)%250A            if\n  i\n-f\n  !\n-ver %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A    fmt.Println()%0A%0A    ver = false%0A    for i:= 1; i %3C qtdttl; i++%7B%0A        if cnt%5Bi%5D == 0%7B%0A            fmt.Print(i)%0A            if i %3C\n+=\n  qtd\n@@ -54,18 +54,22 @@\n qtdttl-1\n-%7B%0A\n+%257B%250A\n         \n@@ -90,58 +90,27 @@\n int(\n-%22 %22)%0A            %7D%0A            ver = true%0A\n+%2522 %2522)%250A\n         \n %7D%0A  \n@@ -109,75 +109,32 @@\n     \n-%7D%0A\n     \n-%7D%0A%0A    if !ver%7B%0A        fmt.Print(%22N%22)%0A    %7D%0A    fmt.Println()%0A%7D\n+%257D%0A+, %2522 %2522)%0A %250A   \n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-17_13-13-21",
+            "content": "@@ -258,40 +258,8 @@\n lse%0A\n-    guar := make(%5B%5Dint, qtdbar)%0A\n     \n@@ -333,25 +333,86 @@\n     \n-guar%5Bj%5D = fig%5Bi%5D%0A\n+fmt.Print(fig%5Bi%5D)%0A%0A            if i %3C qtdbar-1%7B%0A                fmt.Print(%22 %22)\n %0A   \n@@ -424,11 +424,9 @@\n     \n-j++\n+%7D\n %0A   \n@@ -569,125 +569,8 @@\n  %7D%0A%0A\n-    %7D%0A    for i:= 0; i %3C j; i++%7B%0A        fmt.Print(guar%5Bi%5D)%0A        if i %3C j-1%7B%0A            fmt.Print(%22 %22)%0A        %7D%0A\n     \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-17_13-15-57",
+            "content": "@@ -258,17 +258,8 @@\n lse%0A\n-    j:= %0A\n     \n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-17_13-16-05",
+            "content": "@@ -259,21 +259,19 @@\n se%0A    j\n- \n := \n-0\n %0A    gua\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-16-14",
+            "content": "@@ -828,22 +828,17 @@\n t.Print(\n-cnt%5Bi%5D\n+i\n )%0A      \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-19-57",
+            "content": "@@ -828,17 +828,22 @@\n t.Print(\n-i\n+cnt%5Bi%5D\n )%0A      \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-20-24",
+            "content": "@@ -269,18 +269,8 @@\n = 0%0A\n-    k:= 0%0A\n     \n@@ -293,24 +293,24 @@\n nt, qtdbar)%0A\n+\n     for i:= \n@@ -494,32 +494,16 @@\n g%5Bi%5D%5D++%0A\n-            k++%0A\n         \n@@ -542,24 +542,8 @@\n = 1%0A\n-            k++%0A\n     \n@@ -802,24 +802,24 @@\n nt%5Bi%5D == 0%7B%0A\n+\n             \n@@ -835,69 +835,8 @@\n (i)%0A\n-            if i%3C k - 1%7B%0A                break%0A            %7D%0A\n     \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-21-35",
+            "content": "@@ -877,57 +877,8 @@\n (i)%0A\n-            %0A            %0A            ver = true%0A\n     \n@@ -1000,32 +1000,55 @@\n )%0A            %7D%0A\n+            ver = true%0A\n         %7D%0A    %7D%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-17_13-22-04",
+            "content": "@@ -261,24 +261,34 @@\n %0A    j := 0%0A\n+    k:= 0%0A\n     guar := \n@@ -303,24 +303,24 @@\n nt, qtdbar)%0A\n-\n     for i:= \n@@ -504,16 +504,32 @@\n g%5Bi%5D%5D++%0A\n+            k++%0A\n         \n@@ -564,16 +564,32 @@\n i%5D%5D = 1%0A\n+            k++%0A\n         \n@@ -810,17 +810,16 @@\n = 1; i %3C\n-=\n  qtdttl;\n@@ -873,16 +873,126 @@\n rint(i)%0A\n+            %0A            %0A            ver = true%0A            if i%3C k - 1%7B%0A                break%0A            %7D%0A\n         \n@@ -1035,32 +1035,32 @@\n  fmt.Print(%22 %22)%0A\n+\n             %7D%0A  \n@@ -1057,39 +1057,16 @@\n       %7D%0A\n-            ver = true%0A\n         \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-17_13-24-07",
+            "content": "@@ -846,25 +846,24 @@\n       if i %3C\n-=\n  qtdttl-1%7B%0A \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-24-25",
+            "content": "@@ -758,25 +758,25 @@\n     for i:= \n-0\n+1\n ; i %3C= qtdtt\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-25-05",
+            "content": "@@ -144,37 +144,8 @@\n r)%0A%0A\n-    cnt := make(map%5Bint%5Dint)%0A\n     \n@@ -208,32 +208,39 @@\n     \n+%7D%0A%0A\n     cnt\n-%5Bfig%5Bi%5D%5D++%0A    %7D%0A\n+ := make(map%5Bint%5Dint)\n %0A%0A  \n@@ -440,16 +440,124 @@\n      %7D%0A%0A\n+        if cnt%5Bfig%5Bi%5D%5D %3E 0%7B%0A            cnt%5Bfig%5Bi%5D%5D++%0A        %7D else%7B%0A            cnt%5Bfig%5Bi%5D%5D = 1%0A        %7D%0A\n %0A    %7D%0A \n@@ -754,35 +754,8 @@\n lse%0A\n-    primeiroPrint := false%0A\n     \n@@ -823,32 +823,8 @@\n     \n-if !primeiroPrint %7B%0A%09%09%09%09\n fmt.\n@@ -821,35 +821,33 @@\n       fmt.Print(\n-%22 %22\n+i\n )%0A              \n@@ -848,38 +848,27 @@\n     \n-    primeiroPrint = true%0A%09%09%09%7D%0A\n+if i %3C= qtdttl-1%7B%0A \n     \n@@ -867,32 +867,35 @@\n 1%7B%0A             \n+   \n fmt.Print(i)%0A   \n@@ -880,33 +880,35 @@\n       fmt.Print(\n-i\n+%22 %22\n )%0A           %0A  \n@@ -904,16 +904,18 @@\n         \n+ %7D\n %0A       \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-17_13-28-20",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n qtdttl :\n@@ -45,25 +45,28 @@\n qtdttl := 0%0A\n-%09\n+    \n fmt.Scan(&qt\n@@ -71,17 +71,20 @@\n qtdttl)%0A\n-%09\n+    \n qtdbar :\n@@ -87,17 +87,20 @@\n ar := 0%0A\n-%09\n+    \n fmt.Scan\n@@ -113,13 +113,15 @@\n ar)%0A\n-%09\n+    \n fig\n- \n := m\n@@ -140,17 +140,20 @@\n tdbar)%0A%0A\n-%09\n+    \n cnt := m\n@@ -169,23 +169,25 @@\n nt%5Dint)%0A\n-%09\n+    \n for i\n- \n := 0; i \n@@ -195,29 +195,34 @@\n  qtdbar; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Scan((&f\n@@ -229,18 +229,24 @@\n ig%5Bi%5D))%0A\n-%09%09\n+        \n cnt%5Bfig%5B\n@@ -251,21 +251,28 @@\n g%5Bi%5D%5D++%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A%0A    \n ver := f\n@@ -280,17 +280,23 @@\n lse%0A\n-%09\n+    \n j := 0%0A\n-%09\n+    \n guar\n@@ -319,23 +319,25 @@\n qtdbar)%0A\n-%09\n+    \n for i\n- \n := 1; i \n@@ -349,21 +349,26 @@\n bar; i++\n- \n %7B%0A\n-%09%09\n+        \n if fig%5Bi\n@@ -380,22 +380,30 @@\n fig%5Bi-1%5D\n- \n %7B%0A\n-%09%09%09\n+            \n guar%5Bj%5D \n@@ -416,44 +416,74 @@\n i%5D%0A%0A\n-%09%09%09j++%0A%09%09%09ver = true%0A%09%09%7D%0A%0A%09%7D%0A%09\n+            j++%0A            ver = true%0A        %7D%0A%0A%0A    %7D%0A    \n for i\n- \n := 0\n@@ -494,21 +494,26 @@\n %3C j; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -523,18 +523,24 @@\n uar%5Bi%5D)%0A\n-%09%09\n+        \n if i %3C j\n@@ -541,22 +541,30 @@\n  i %3C j-1\n- \n %7B%0A\n-%09%09%09\n+            \n fmt.Prin\n@@ -574,16 +574,28 @@\n  %22)%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n if !\n@@ -592,34 +592,40 @@\n %7D%0A    if !ver %7B%0A\n-%09%09\n+        \n fmt.Print(%22N%22)%0A%09\n@@ -615,36 +615,42 @@\n  fmt.Print(%22N%22)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n fmt.Println()%0A%0A%09\n@@ -648,17 +648,20 @@\n ntln()%0A%0A\n-%09\n+    \n ver = fa\n@@ -664,17 +664,20 @@\n = false%0A\n-%09\n+    \n primeiro\n@@ -695,19 +695,21 @@\n lse%0A\n-%09\n+    \n for i\n- \n := \n-1\n+0\n ; i \n@@ -722,21 +722,26 @@\n ttl; i++\n- \n %7B%0A\n-%09%09\n+        \n if cnt%5Bi\n@@ -746,22 +746,30 @@\n %5Bi%5D == 0\n- \n %7B%0A\n-%09%09%09\n+            \n if !prim\n@@ -799,20 +799,32 @@\n nt(%22 %22)%0A\n-%09%09%09%09\n+                \n primeiro\n@@ -841,19 +841,28 @@\n ue%0A%09%09%09%7D%0A\n-%09%09%09\n+            \n fmt.Prin\n@@ -870,44 +870,81 @@\n (i)%0A\n-%0A%09%09%09ver = true%0A%09%09%7D%0A%09%7D%0A%0A%09\n+           %0A            ver = true%0A        %7D%0A    %7D%0A%0A    \n if !ver\n- \n %7B%0A\n-%09%09\n+        \n fmt.\n@@ -958,12 +958,18 @@\n N%22)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n fmt.\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-17_13-29-20",
+            "content": "@@ -550,19 +550,20 @@\n rint := \n-tru\n+fals\n e%0A%09for i\n@@ -669,20 +669,19 @@\n Print = \n-fals\n+tru\n e%0A%09%09%09%7D%0A%09\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-17_13-30-28",
+            "content": "@@ -655,22 +655,9 @@\n %0A%09%09%09\n-%7D%0A            \n+%09\n prim\n@@ -674,16 +674,21 @@\n = false%0A\n+%09%09%09%7D%0A\n %09%09%09fmt.P\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-17_13-30-36",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tqtdttl := 0\n\tfmt.Scan(&qtdttl)\n\tqtdbar := 0\n\tfmt.Scan(&qtdbar)\n\tfig := make([]int, qtdbar)\n\n\tcnt := make(map[int]int)\n\tfor i := 0; i < qtdbar; i++ {\n\t\tfmt.Scan((&fig[i]))\n\t\tcnt[fig[i]]++\n\t}\n\n\tver := false\n\tj := 0\n\tguar := make([]int, qtdbar)\n\tfor i := 1; i < qtdbar; i++ {\n\t\tif fig[i] == fig[i-1] {\n\t\t\tguar[j] = fig[i]\n\n\t\t\tj++\n\t\t\tver = true\n\t\t}\n\n\t}\n\tfor i := 0; i < j; i++ {\n\t\tfmt.Print(guar[i])\n\t\tif i < j-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tif !ver {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Println()\n\n\tver = false\n\tprimeiroPrint := true\n\tfor i := 1; i <= qtdttl; i++ {\n\t\tif cnt[i] == 0 {\n\t\t\tif !primeiroPrint {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n            primeiroPrint = false\n\t\t\tfmt.Print(i)\n\n\t\t\tver = true\n\t\t}\n\t}\n\n\tif !ver {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "59"
         }
     ]
 }

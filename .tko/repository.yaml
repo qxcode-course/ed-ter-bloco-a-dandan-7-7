@@ -25,14 +25,14 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
-- ed@backtrack
 - ed@list
-- ed@linear
 - ed@vector
-- ed@tree
-- ed@map_set
 - ed@basic
+- ed@rec
+- ed@tree
+- ed@linear
+- ed@map_set
+- ed@backtrack
 flags:
   inbox: all
   panel: skills
@@ -42,5 +42,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@arvore-path
-selected_index: 85
+selected: ed@treinando
+selected_index: 20

@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_12-51-36",
+            "content": "@@ -638,33 +638,32 @@\n x1%0A%09%7D%0A%09if string\n-s\n .Contains(%22x%22, x\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-17_12-51-54",
+            "content": "@@ -609,15 +609,15 @@\n ins(\n-x1, %22x%22\n+%22x%22, x1\n )%7B%0A%09\n@@ -661,15 +661,15 @@\n ins(\n-x2, %22x%22\n+%22x%22, x2\n )%7B%0A%09\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-17_12-52-23",
+            "content": "@@ -589,186 +589,38 @@\n %7D%0A%0A%09\n-strx1 := %5B%5Drune(x1)%0A%09for i:= 0; i%3C len(strx1); i++%7B%0A%09%09if strx1%5Bi%5D == 'x'%7B%0A%09%09%09return %22l%22 + x1%0A%0A%09%09%7D%0A%09%7D%0A%0A%09strx2 := %5B%5Drune(x2)%0A%09for i:= 0; i%3C len(strx2); i++%7B%0A%09%09if strx2%5Bi%5D == 'x'\n+if strings.Contains(x1, %22x%22)\n %7B%0A\n-%09\n %09%09re\n@@ -629,28 +629,18 @@\n rn %22\n-r\n+l\n %22 + x\n-2%0A%0A%09%09%7D%0A%09%7D%0A%0A%09/*\n+1%0A%09%7D\n %0A%09if\n@@ -692,13 +692,8 @@\n %0A%09%7D%0A\n-%09%09*/%0A\n %09ret\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-17_12-55-12",
+            "content": "@@ -524,16 +524,74 @@\n alue)%0A%0A%09\n+if x1 == %22!%22%7B%0A%09%09return x1%0A%09%7D%0A%09if x2 == %22!%22%7B%0A%09%09return x2%0A%09%7D\n %0A%0A%09strx1\n@@ -854,70 +854,8 @@\n %09%09*/\n-%0A%0A%09%09if x1 == %22!%22%7B%0A%09%09return x1%0A%09%7D%0A%09if x2 == %22!%22%7B%0A%09%09return x2%0A%09%7D\n %0A%09re\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-06-17_12-55-42",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// retorne o caminho at\u00e9 o n\u00f3 ou ! se n\u00e3o existir\n// voc\u00ea pode fazer recursivo ou interativo\n// tamb\u00e9m pode criar fun\u00e7\u00f5es auxiliares se achar necess\u00e1rio\nfunc findPath(node *Node, value int) string {\n\t// TODO\n\t// ACT\n\t// _, _ = node, value\n\t// return \"\"\n\n\tif node == nil {\n\t\treturn \"!\"\n\t}\n\tif node.Value == value{\n\t\treturn \"x\"\n\t}\n\n\tx1 := findPath(node.Left, value)\n\tx2 := findPath(node.Right, value)\n\n\t\n\n\tstrx1 := []rune(x1)\n\tfor i:= 0; i< len(strx1); i++{\n\t\tif strx1[i] == 'x'{\n\t\t\treturn \"l\" + x1\n\n\t\t}\n\t}\n\n\tstrx2 := []rune(x2)\n\tfor i:= 0; i< len(strx2); i++{\n\t\tif strx2[i] == 'x'{\n\t\t\treturn \"r\" + x2\n\n\t\t}\n\t}\n\n\t/*\n\tif strings.Contains(x2, \"x\"){\n\t\treturn \"r\" + x2\n\t}\n\t\t*/\n\n\t\tif x1 == \"!\"{\n\t\treturn x1\n\t}\n\tif x2 == \"!\"{\n\t\treturn x2\n\t}\n\treturn \"!\"\n\n\n}\n\n// ----------------------------------------------------------------------------------\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\troot := create(&parts)\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n\tfmt.Println(\"Caminho:\", findPath(root, value))\n}\n",
+            "lines": "124"
+        }
+    ]
+}
