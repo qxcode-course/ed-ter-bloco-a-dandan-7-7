@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-01_14-14-54",
+            "content": "@@ -267,38 +267,8 @@\n %0A%09%7D%0A\n-%09if value == 0%7B%0A%09%09return 0%0A%09%7D%0A\n %09for\n@@ -309,16 +309,17 @@\n lice%5Bi%5D \n+%3C\n  value%7B%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-07-01_14-15-25",
+            "content": "@@ -339,17 +339,16 @@\n lice%5Bi%5D \n-%3C\n  value%7B%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-01_14-15-52",
+            "content": "@@ -264,16 +264,44 @@\n val%0A%09%7D%0A%09\n+if value == 0%7B%0A%09%09return 0%0A%09%7D\n %0A%09for i:\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-01_14-16-32",
+            "content": "@@ -343,38 +343,8 @@\n %0A%09%7D%0A\n-%09if value == 0%7B%0A%09%09return 0%0A%09%7D%0A\n %09ret\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-01_14-16-37",
+            "content": "@@ -340,20 +340,16 @@\n %09%09%7D%0A%09%7D%0A%09\n-%09// \n if value\n@@ -361,12 +361,8 @@\n %7B%0A%09%09\n-// %09\n retu\n@@ -371,12 +371,8 @@\n  0%0A%09\n-%09// \n %7D%0A%09r\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-01_14-17-07",
+            "content": "@@ -322,32 +322,9 @@\n alue\n- && slice%5Bi+1%5D %3E value%7B \n+%7B\n %0A%09%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-01_14-18-29",
+            "content": "@@ -295,12 +295,8 @@\n ice)\n- - 1\n ;i++\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-01_14-18-38",
+            "content": "@@ -274,17 +274,17 @@\n for i:= \n-1\n+0\n ; i %3C le\n@@ -292,16 +292,19 @@\n (slice) \n+- 1\n ;i++%7B%0A%09%09\n@@ -313,18 +313,16 @@\n  slice%5Bi\n--1\n %5D %3C valu\n@@ -333,16 +333,18 @@\n  slice%5Bi\n++1\n %5D %3E valu\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-01_14-19-03",
+            "content": "@@ -365,16 +365,19 @@\n %09%7D%0A%09%7D%0A%09%09\n+// \n if value\n@@ -385,16 +385,19 @@\n == 0%7B%0A%09%09\n+// \n %09return \n@@ -400,16 +400,19 @@\n urn 0%0A%09%09\n+// \n %7D%0A%09retur\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-01_14-19-12",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\t_, _ = slice, value\n\tval := 0\n\tb := false\n\tfor i := 0; i < len(slice);i++{\n\t\tif slice[i] == value{\n\t\t\tval = i\n\t\t\tb = true\n\t\t}\n\t}\n\tif b{\n\t\treturn val\n\t}\n\t\n\tfor i:= 1; i < len(slice) ;i++{\n\t\tif slice[i-1] < value && slice[i] > value{ \n\t\t\treturn i\n\t\t}\n\t}\n\t\tif value == 0{\n\t\t\treturn 0\n\t\t}\n\treturn len(slice)\n\n\n\t//return 0\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "53"
+        }
+    ]
+}

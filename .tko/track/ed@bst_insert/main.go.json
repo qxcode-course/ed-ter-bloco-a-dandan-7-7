@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-01_16-01-05",
+            "content": "@@ -213,28 +213,8 @@\n %09%7D%0A%09\n-a:= false%0A%09b:= false\n %0A%09if\n@@ -220,25 +220,25 @@\n f node.Left \n-!\n+=\n = nil%7B%0A%09%09a =\n@@ -235,17 +235,38 @@\n nil%7B%0A%09%09a\n- \n+:=false%0A%09%7D else%7B%0A%09%09a :\n = existe\n@@ -285,23 +285,17 @@\n value)%0A%09\n-%09%0A%09%7D %0A%09\n+%7D\n %0A%09if nod\n@@ -298,25 +298,25 @@\n  node.Right \n-!\n+=\n = nil%7B%0A%09%09b= \n@@ -313,16 +313,37 @@\n nil%7B%0A%09%09b\n+:=false%0A%09%7D else%7B%0A%09%09b:\n = existe\n@@ -367,13 +367,9 @@\n e)%0A%09\n-%09%0A%09%7D \n+%7D\n %0A%09%0A%09\n@@ -678,16 +678,20 @@\n index++%0A\n+%09%09%09%09\n %0A%09%09%09%7D%0A%0A%09\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-01_16-02-24",
+            "content": "@@ -694,17 +694,16 @@\n  values%0A\n-%0A\n %09return \n@@ -703,17 +703,18 @@\n return n\n-o\n+il\n %0A%7D%0A%0A// -\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-01_16-02-45",
+            "content": "@@ -581,31 +581,24 @@\n %09no.Left\n- = &Node%7B\n+.\n Value\n-:\n+ =\n  values%5B\n@@ -591,33 +591,32 @@\n alue = values%5Bi%5D\n-%7D\n %0A%09%09%09%09index++%0A%09%09%09\n@@ -639,23 +639,16 @@\n ight\n- = &Node%7B\n+.\n Value\n-:\n+ =\n  val\n@@ -653,17 +653,16 @@\n alues%5Bi%5D\n-%7D\n %0A%09%09%09%09ind\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-07-01_16-11-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc existe(node *Node, value int) bool {\n\t\n\tif node.Value == value{\n\t\treturn true\n\t}\n\ta:= false\n\tb:= false\n\tif node.Left != nil{\n\t\ta = existe(node.Left, value)\n\t\t\n\t} \n\t\n\tif node.Right != nil{\n\t\tb= existe(node.Right, value)\n\t\t\n\t} \n\t\n\t\n\tif a || b{\n\t\treturn true\n\t}\n\treturn false\n\n}\n\nfunc BstInsert(values []int) *Node {\n\t// TODO\n\tno:= &Node{Value: values[0]}\n\tindex:=1\n\tfor i:=1;i<len(values);i++{\n\t\tif !existe(no, values[i]){\n\t\t\tif index % 2 != 0{\n\t\t\t\tno.Left = &Node{Value: values[i]}\n\t\t\t\tindex++\n\t\t\t} else{\n\t\t\t\tno.Right = &Node{Value: values[i]}\n\t\t\t\tindex++\n\n\t\t\t}\n\n\t\t}\n\t}\n\t\n\t_ = values\n\n\treturn no\n}\n\n// -----------------------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tvalues := make([]int, 0, len(parts))\n\tfor _, elem := range parts {\n\t\tv, err := strconv.Atoi(elem)\n\t\tif err == nil {\n\t\t\tvalues = append(values, v)\n\t\t}\n\t}\n\troot := BstInsert(values)\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n}\n",
+            "lines": "107"
+        }
+    ]
+}

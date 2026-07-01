@@ -1,0 +1,65 @@
+2026-07-01 14:09:13, MOVE, v:1, k:ed@magicsearch, mode:DOWN
+2026-07-01 14:09:14, MOVE, v:1, k:ed@magicsearch, mode:PICK
+2026-07-01 14:12:03, MOVE, v:1, k:ed@magicsearch, mode:BACK
+2026-07-01 14:12:06, MOVE, v:1, k:ed@magicsearch, mode:PICK
+2026-07-01 14:09:13, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-07-01 14:13:48, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-07-01 14:14:54, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:60, size:49
+2026-07-01 14:15:25, EXEC, v:1, k:ed@magicsearch, mode:FULL, size:52, fail:COMP
+2026-07-01 14:15:26, EXEC, v:1, k:ed@magicsearch, mode:FULL, fail:COMP
+2026-07-01 14:15:52, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70, size:52
+2026-07-01 14:16:32, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:60, size:50
+2026-07-01 14:16:37, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70, size:53
+2026-07-01 14:17:07, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:60, size:53
+2026-07-01 14:18:29, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:50, size:53
+2026-07-01 14:18:38, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70, size:53
+2026-07-01 14:18:38, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-07-01 14:19:03, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:90, size:53
+2026-07-01 14:19:12, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:100, size:53
+2026-07-01 14:19:15, MOVE, v:1, k:ed@magicsearch, mode:BACK
+2026-07-01 14:19:18, SELF, v:1, k:ed@magicsearch, self:1, rate:100
+2026-07-01 14:19:29, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-07-01 14:19:30, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33
+2026-07-01 14:19:12, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-07-01 14:23:42, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 14:26:27, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 14:32:48, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 14:34:46, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 14:43:11, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 14:46:32, MOVE, v:1, k:ed@iterador, mode:BACK
+2026-07-01 15:05:05, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-07-01 15:05:07, EXEC, v:1, k:ed@iterador, mode:FULL, size:90, fail:COMP
+2026-07-01 15:09:36, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 15:14:41, EXEC, v:1, k:ed@iterador, mode:FULL, size:108, fail:COMP
+2026-07-01 15:14:42, EXEC, v:1, k:ed@iterador, mode:FULL, fail:COMP
+2026-07-01 15:14:50, EXEC, v:1, k:ed@iterador, mode:FULL, size:104, fail:COMP
+2026-07-01 15:14:51, EXEC, v:1, k:ed@iterador, mode:FULL, fail:COMP
+2026-07-01 15:14:49, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 15:15:06, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:104
+2026-07-01 15:20:00, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 15:20:54, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:122
+2026-07-01 15:21:14, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:122
+2026-07-01 15:21:26, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:123
+2026-07-01 15:21:39, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:123
+2026-07-01 15:22:10, EXEC, v:1, k:ed@iterador, mode:FULL, rate:100, size:123
+2026-07-01 15:22:11, MOVE, v:1, k:ed@iterador, mode:BACK
+2026-07-01 15:22:17, SELF, v:1, k:ed@iterador, self:1, rate:100
+2026-07-01 15:22:17, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-07-01 15:22:19, MOVE, v:1, k:ed@iterador, mode:BACK
+2026-07-01 15:23:34, MOVE, v:1, k:ed@bst_insert, mode:DOWN
+2026-07-01 15:23:36, MOVE, v:1, k:ed@bst_insert, mode:PICK
+2026-07-01 15:22:09, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-07-01 15:23:34, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:23:34, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:34:39, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:38:18, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:44:55, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:49:21, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:52:00, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 15:57:07, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 16:01:05, EXEC, v:1, k:ed@bst_insert, mode:FULL, size:106, fail:COMP
+2026-07-01 16:02:24, EXEC, v:1, k:ed@bst_insert, mode:FULL, rate:0, size:106
+2026-07-01 16:02:45, EXEC, v:1, k:ed@bst_insert, mode:FULL, rate:16, size:107
+2026-07-01 16:02:44, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-07-01 16:11:08, EXEC, v:1, k:ed@bst_insert, mode:FULL, rate:16, size:107
+2026-07-01 16:12:11, MOVE, v:1, k:ed@bst_insert, mode:BACK

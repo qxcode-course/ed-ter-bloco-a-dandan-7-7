@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-04-27_13-08-35",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype MyList struct {\n\tdata []int\n}\n\ntype Iterator struct {\n\tdata  []int\n\tindex int\n}\n\nfunc NewMyList(values []int) *MyList {\n\treturn &MyList{data: values}\n}\n\nfunc (l *MyList) Iterator() *Iterator {\n\treturn &Iterator{data: l.data, index: -1}\n}\n\nfunc (i *Iterator) HasNext() bool {\n\treturn i.index < len(i.data)-1\n}\n\nfunc (i *Iterator) Next() int {\n\tif i.index == len(i.data) {\n\t\tpanic(fmt.Errorf(\"No more elements\"))\n\t}\n\ti.index += 1\n\treturn i.data[i.index]\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tmylist := NewMyList([]int{})\n\tfor scanner.Scan() {\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\tbreak\n\t\tcase \"read\":\n\t\t\tfor i := 1; i < len(args); i++ {\n\t\t\t\tslice := make([]int, len(args)-1)\n\t\t\t\tfor i, value := range args[1:] {\n\t\t\t\t\tslice[i], _ = strconv.Atoi(value)\n\t\t\t\t}\n\t\t\t\tmylist = NewMyList(slice)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Print(\"[ \")\n\t\t\tfor it := mylist.Iterator(); it.HasNext(); {\n\t\t\t\tfmt.Printf(\"%v \", it.Next())\n\t\t\t}\n\t\t\tfmt.Println(\"]\")\n\t\tcase \"reverse\":\n\t\t\t// fmt.Print(\"[ \")\n\t\t\t// for it := mylist.ReverseIterator(); it.HasNext(); {\n\t\t\t// \tfmt.Printf(\"%v \", it.Next())\n\t\t\t// }\n\t\t\t// fmt.Println(\"]\")\n\t\tcase \"cyclic\":\n\t\t\t// qtd, _ := strconv.Atoi(args[1])\n\t\t\t// fmt.Print(\"[ \")\n\t\t\t// it := mylist.CyclicIterator()\n\t\t\t// for range qtd {\n\t\t\t// \tfmt.Printf(\"%v \", it.Next())\n\t\t\t// }\n\t\t\t// fmt.Println(\"]\")\n\t\t}\n\t}\n\n}\n",
+            "content": "@@ -527,76 +527,8 @@\n %0A%7D%0A%0A\n-%0Afunc (i *Iterator)%0A%0Afunc (i *MyList) ReverseIterator() bool%7B%0A%09%0A%7D%0A%0A%0A\n func\n@@ -1116,24 +1116,27 @@\n everse%22:%0A%09%09%09\n+// \n fmt.Print(%22%5B\n@@ -1134,32 +1134,35 @@\n .Print(%22%5B %22)%0A%09%09%09\n+// \n for it := mylist\n@@ -1192,32 +1192,35 @@\n HasNext(); %7B%0A%09%09%09\n+// \n %09fmt.Printf(%22%25v \n@@ -1228,37 +1228,43 @@\n , it.Next())%0A%09%09%09\n+// \n %7D%0A%09%09%09\n+// \n fmt.Println(%22%5D%22)\n",
             "lines": "82"
+        },
+        {
+            "label": "2026-07-01_15-05-07",
+            "content": "@@ -527,324 +527,27 @@\n %0A%7D%0A%0A\n-type ReverseIterator struct%7B%0A%09data %5B%5Dint%0A%09index int%0A%7D%0A%0Afunc (l *MyList)ReverseIterator() *ReverseIterator%7B%0A%09return &ReverseIterator%7B%0A%09%09data: l.data, %0A%09%09index: len(l.data),%0A%09%7D%0A%7D%0A%0Afunc (i *ReverseIterator)hasNext() bool %7B%0A%09return i.index %3E 0%0A%7D%0Afunc(i *ReverseIterator)Next()int%7B%0A%09i.index -=1%0A%09return i.data%5Bi.index%5D%0A%7D%0A\n+%0Afunc (i *Iterator)\n %0A%0Afu\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-01_15-14-41",
+            "content": "@@ -841,16 +841,62 @@\n ex%5D%0A%7D%0A%0A%0A\n+func (i *MyList) ReverseIterator() bool%7B%0A%09%0A%7D%0A%0A\n %0Afunc ma\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-07-01_15-14-50",
+            "content": "@@ -726,17 +726,17 @@\n terator)\n-H\n+h\n asNext()\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-07-01_15-15-06",
+            "content": "@@ -844,289 +844,8 @@\n %0A%7D%0A%0A\n-type CyclicIterator struct%7B%0A%09data %5B%5Dint%0A%09index int%0A%7D%0Afunc (i *MyList) CyclicIterator() *CyclicIterator%7B%0A%09return &CyclicIterator%7B%0A%09%09data: i.data,%0A%09%09index:0,%0A%09%7D%0A%7D%0A%0Afunc (i *CyclicIterator) Next() int%7B%0A%0A%09i.index++%0A%09if i.index == len(i.data)%7B%0A%09%09i.index = 0%0A%09%7D%0A%09return i.data%5Bi.index%5D%0A%7D\n %0A%0Afu\n@@ -1588,16 +1588,19 @@\n ic%22:%0A%09%09%09\n+// \n qtd, _ :\n@@ -1622,24 +1622,27 @@\n args%5B1%5D)%0A%09%09%09\n+// \n fmt.Print(%22%5B\n@@ -1648,16 +1648,19 @@\n %5B %22)%0A%09%09%09\n+// \n it := my\n@@ -1680,24 +1680,27 @@\n erator()%0A%09%09%09\n+// \n for range qt\n@@ -1702,24 +1702,27 @@\n ge qtd %7B%0A%09%09%09\n+// \n %09fmt.Printf(\n@@ -1734,37 +1734,43 @@\n , it.Next())%0A%09%09%09\n+// \n %7D%0A%09%09%09\n+// \n fmt.Println(%22%5D%22)\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-07-01_15-20-54",
+            "content": "@@ -1122,12 +1122,8 @@\n ndex\n- - 1\n %5D%0A%7D%0A\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-07-01_15-21-14",
+            "content": "@@ -1097,33 +1097,8 @@\n = 0%0A\n-%09%09return i.data%5Bi.index%5D%0A\n %09%7D%0A%09\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-07-01_15-21-26",
+            "content": "@@ -1139,24 +1139,28 @@\n data%5Bi.index\n+ - 1\n %5D%0A%7D%0A%0Afunc ma\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-07-01_15-21-39",
+            "content": "@@ -1043,29 +1043,8 @@\n nt%7B%0A\n-%09d := i.data%5Bi.index%5D\n %0A%09i.\n@@ -1099,21 +1099,57 @@\n 0%0A%09%09\n-%0A%09%7D%0A%09return d\n+return i.data%5Bi.index%5D%0A%09%7D%0A%09return i.data%5Bi.index%5D\n %0A%7D%0A%0A\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-07-01_15-22-10",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype MyList struct {\n\tdata []int\n}\n\ntype Iterator struct {\n\tdata  []int\n\tindex int\n}\n\nfunc NewMyList(values []int) *MyList {\n\treturn &MyList{data: values}\n}\n\nfunc (l *MyList) Iterator() *Iterator {\n\treturn &Iterator{data: l.data, index: -1}\n}\n\nfunc (i *Iterator) HasNext() bool {\n\treturn i.index < len(i.data)-1\n}\n\nfunc (i *Iterator) Next() int {\n\tif i.index == len(i.data) {\n\t\tpanic(fmt.Errorf(\"No more elements\"))\n\t}\n\ti.index += 1\n\treturn i.data[i.index]\n}\n\ntype ReverseIterator struct{\n\tdata []int\n\tindex int\n}\n\nfunc (l *MyList)ReverseIterator() *ReverseIterator{\n\treturn &ReverseIterator{\n\t\tdata: l.data, \n\t\tindex: len(l.data),\n\t}\n}\n\nfunc (i *ReverseIterator)HasNext() bool {\n\treturn i.index > 0\n}\nfunc(i *ReverseIterator)Next()int{\n\ti.index -=1\n\treturn i.data[i.index]\n}\n\ntype CyclicIterator struct{\n\tdata []int\n\tindex int\n}\nfunc (i *MyList) CyclicIterator() *CyclicIterator{\n\treturn &CyclicIterator{\n\t\tdata: i.data,\n\t\tindex:0,\n\t}\n}\n\nfunc (i *CyclicIterator) Next() int{\n\td := i.data[i.index]\n\ti.index++\n\tif i.index == len(i.data){\n\t\ti.index = 0\n\t\t\n\t}\n\treturn d\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tmylist := NewMyList([]int{})\n\tfor scanner.Scan() {\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\tbreak\n\t\tcase \"read\":\n\t\t\tfor i := 1; i < len(args); i++ {\n\t\t\t\tslice := make([]int, len(args)-1)\n\t\t\t\tfor i, value := range args[1:] {\n\t\t\t\t\tslice[i], _ = strconv.Atoi(value)\n\t\t\t\t}\n\t\t\t\tmylist = NewMyList(slice)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Print(\"[ \")\n\t\t\tfor it := mylist.Iterator(); it.HasNext(); {\n\t\t\t\tfmt.Printf(\"%v \", it.Next())\n\t\t\t}\n\t\t\tfmt.Println(\"]\")\n\t\tcase \"reverse\":\n\t\t\tfmt.Print(\"[ \")\n\t\t\tfor it := mylist.ReverseIterator(); it.HasNext(); {\n\t\t\t\tfmt.Printf(\"%v \", it.Next())\n\t\t\t}\n\t\t\tfmt.Println(\"]\")\n\t\tcase \"cyclic\":\n\t\t\tqtd, _ := strconv.Atoi(args[1])\n\t\t\tfmt.Print(\"[ \")\n\t\t\tit := mylist.CyclicIterator()\n\t\t\tfor range qtd {\n\t\t\t\tfmt.Printf(\"%v \", it.Next())\n\t\t\t}\n\t\t\tfmt.Println(\"]\")\n\t\t}\n\t}\n\n}\n",
+            "lines": "123"
         }
     ]
 }
