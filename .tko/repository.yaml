@@ -25,22 +25,22 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
+- ed@backtrack
 - ed@linear
-- ed@vector
 - ed@map_set
 - ed@rec
-- ed@basic
+- ed@vector
 - ed@tree
-- ed@backtrack
+- ed@list
+- ed@basic
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: time
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@bst_insert
-selected_index: 86
+selected: ed@pilhado
+selected_index: 65

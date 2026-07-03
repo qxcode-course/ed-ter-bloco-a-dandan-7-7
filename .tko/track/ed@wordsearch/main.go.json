@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_19-32-09",
+            "content": "@@ -442,16 +442,19 @@\n %5Bi+k%5D%5Bj%5D\n+ %7C%7C\n  %7B%0A%09%09%09%09%09\n@@ -632,15 +632,13 @@\n lse \n-%7B\n break\n-%7D\n %0A%09%09%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_19-32-57",
+            "content": "@@ -217,18 +217,16 @@\n %0A%09y:=0%0A%09\n-//\n z:=0%0A%09fo\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_19-33-03",
+            "content": "@@ -395,20 +395,16 @@\n en(grid)\n- - 1\n %7B%0A%09%09%09%09%09%09\n@@ -554,20 +554,16 @@\n grid%5B0%5D)\n- - 1\n %7B%0A%09%09%09%09%09%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_19-33-34",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\t_, _ = grid, word\n\tw := []byte(word)\n\t\n\n\tx:=0\n\ty:=0\n\t//z:=0\n\tfor\ti := 0; i < len(grid);i++{\n\t\tfor j:= 0; j < len(grid[0]); i++{\n\t\t\tif w[0] == grid[i][j]{\n\t\t\t\tx = 1\n\t\t\t\ty = 1\n\t\t\t\tfor k := 1; k < len(w); k++{\n\t\t\t\t\tif i+k >= len(grid) - 1{\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t\tif w[k] == grid[i+k][j] {\n\t\t\t\t\t\tx++\n\t\t\t\t\t} else{\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tfor k := 1; k < len(w); k++{\n\t\t\t\t\tif j+k >=len(grid[0]) - 1{\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t\tif w[k] == grid[i][j+k]{\n\t\t\t\t\t\ty++\n\t\t\t\t\t} else {break}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif x >= len(w) - 1 || y>= len(w){\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "66"
+        }
+    ]
+}

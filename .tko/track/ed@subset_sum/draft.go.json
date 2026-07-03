@@ -7,8 +7,33 @@
         },
         {
             "label": "2026-04-17_12-41-02",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"image/jpeg\"\n)\nfunc main() {\n    var total int\n    fmt.Scanf(\"%d\", &total)\n    var numero int\n    fmt.Scanf(\"%d\", &numero)\n    vetor := make([]int, total)\n\n    for i := 0; i < total; i++ {\n        fmt.Scanf(\"%d\", &vetor[i])\n    }\n\n    for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            if(vetor[i] + vetor[j] == numero) {\n                fmt.Printf(\"true\\n\")\n                return \n            }\n        }\n    }\n\n}\n",
+            "content": "@@ -469,34 +469,8 @@\n    %7D\n-%0A    fmt.Printf(%22false%5Cn%22)\n %0A%0A%7D%0A\n",
             "lines": "27"
+        },
+        {
+            "label": "2026-07-02_15-43-04",
+            "content": "@@ -469,313 +469,8 @@\n    %7D\n-%0A%0A     for i := 0; i %3C total; i++ %7B%0A        for j := 0; j %3C total; j++ %7B%0A            for k := 0; k %3C total; k++ %7B%0A                if(vetor%5Bi%5D + vetor%5Bj%5D + vetor%5Bk%5D == numero) %7B%0A                    fmt.Printf(%22true%5Cn%22)%0A                    return %0A                %7D%0A            %7D%0A        %7D%0A    %7D%0A    %0A    %0A%0A\n %0A   \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-07-02_15-44-10",
+            "content": "@@ -772,391 +772,8 @@\n     \n-for i := 0; i %3C total; i++ %7B%0A        for j := 0; j %3C total; j++ %7B%0A            for k := 0; k %3C total; k++ %7B%0A                for l := 0; l %3C total; l++ %7B%0A                    if(vetor%5Bi%5D + vetor%5Bj%5D + vetor%5Bk%5D + vetor%5Bl%5D == numero) %7B%0A                        fmt.Printf(%22true%5Cn%22)%0A                        return %0A                    %7D%0A                %7D%0A            %7D%0A        %7D       %0A    %7D\n %0A%0A%0A \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-02_15-44-38",
+            "content": "@@ -1157,495 +1157,8 @@\n  %7D%0A%0A\n-    for i := 0; i %3C total; i++ %7B%0A        for j := 0; j %3C total; j++ %7B%0A            for k := 0; k %3C total; k++ %7B%0A                for l := 0; l %3C total; l++ %7B%0A                    for m := 0; m %3C total; m++ %7B%0A                        if(vetor%5Bi%5D + vetor%5Bj%5D + vetor%5Bk%5D + vetor%5Bl%5D + vetor%5Bm%5D == numero) %7B%0A                            fmt.Printf(%22true%5Cn%22)%0A                            return %0A                        %7D%0A                    %7D%0A                %7D%0A            %7D%0A        %7D       %0A    %7D%0A%0A\n %0A   \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-02_15-45-08",
+            "content": "@@ -1643,624 +1643,8 @@\n   %7D%0A\n-    for i := 0; i %3C total; i++ %7B%0A        for j := 0; j %3C total; j++ %7B%0A            for k := 0; k %3C total; k++ %7B%0A                for l := 0; l %3C total; l++ %7B%0A                    for m := 0; m %3C total; m++ %7B%0A                        for n := 0; n %3C total; n++ %7B%0A                            if(vetor%5Bi%5D + vetor%5Bj%5D + vetor%5Bk%5D + vetor%5Bl%5D + vetor%5Bm%5D + vetor%5Bn%5D == numero) %7B%0A                                fmt.Printf(%22true%5Cn%22)%0A                                return %0A                            %7D%0A                       %0A                        %7D%0A                    %7D%0A                %7D%0A            %7D%0A        %7D       %0A    %7D%0A\n %0A%0A  \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-07-02_15-46-28",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"image/jpeg\"\n)\nfunc main() {\n    var total int\n    fmt.Scanf(\"%d\", &total)\n    var numero int\n    fmt.Scanf(\"%d\", &numero)\n    vetor := make([]int, total)\n\n    for i := 0; i < total; i++ {\n        fmt.Scanf(\"%d\", &vetor[i])\n    }\n\n    for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            if(vetor[i] + vetor[j] == numero) {\n                fmt.Printf(\"true\\n\")\n                return \n            }\n        }\n    }\n\n     for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            for k := 0; k < total; k++ {\n                if(vetor[i] + vetor[j] + vetor[k] == numero) {\n                    fmt.Printf(\"true\\n\")\n                    return \n                }\n            }\n        }\n    }\n    \n    for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            for k := 0; k < total; k++ {\n                for l := 0; l < total; l++ {\n                    if(vetor[i] + vetor[j] + vetor[k] + vetor[l] == numero) {\n                        fmt.Printf(\"true\\n\")\n                        return \n                    }\n                }\n            }\n        }       \n    }\n\n    for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            for k := 0; k < total; k++ {\n                for l := 0; l < total; l++ {\n                    for m := 0; m < total; m++ {\n                        if(vetor[i] + vetor[j] + vetor[k] + vetor[l] + vetor[m] == numero) {\n                            fmt.Printf(\"true\\n\")\n                            return \n                        }\n                    }\n                }\n            }\n        }       \n    }\n    for i := 0; i < total; i++ {\n        for j := 0; j < total; j++ {\n            for k := 0; k < total; k++ {\n                for l := 0; l < total; l++ {\n                    for m := 0; m < total; m++ {\n                        for n := 0; n < total; n++ {\n                            if(vetor[i] + vetor[j] + vetor[k] + vetor[l] + vetor[m] + vetor[n] == numero) {\n                                fmt.Printf(\"true\\n\")\n                                return \n                            }\n                       \n                        }\n                    }\n                }\n            }\n        }       \n    }\n\n\n    fmt.Printf(\"false\\n\")\n\n}\n",
+            "lines": "86"
         }
     ]
 }

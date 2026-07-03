@@ -4,6 +4,9 @@ import (
 	"fmt"
 	//"image/jpeg"
 )
+
+func BT()
+
 func main() {
     var total int
     fmt.Scanf("%d", &total)
@@ -15,13 +18,9 @@ func main() {
         fmt.Scanf("%d", &vetor[i])
     }
 
-    for i := 0; i < total; i++ {
-        for j := 0; j < total; j++ {
-            if(vetor[i] + vetor[j] == numero) {
-                fmt.Printf("true\n")
-                return 
-            }
-        }
-    }
+    
+
+
+    fmt.Printf("false\n")
 
 }

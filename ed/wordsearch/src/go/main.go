@@ -9,6 +9,12 @@ import (
 // Não mude a assinatura desta função, ela é a função chamada pelo LeetCode
 func exist(grid [][]byte, word string) bool {
 	_, _ = grid, word
+	w := []byte(word)
+	
+
+	
+
+
 	return false
 }
 

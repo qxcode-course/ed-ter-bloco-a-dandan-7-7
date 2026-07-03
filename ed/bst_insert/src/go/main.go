@@ -14,52 +14,32 @@ type Node struct {
 	Right *Node
 }
 
-func existe(node *Node, value int) bool {
-	
-	if node.Value == value{
-		return true
+func insert(node *Node, value int) *Node {
+	if node == nil{
+		return &Node{Value: value}
 	}
-	a:= false
-	b:= false
-	if node.Left != nil{
-		a = existe(node.Left, value)
-		
-	} 
-	
-	if node.Right != nil{
-		b= existe(node.Right, value)
-		
-	} 
-	
-	
-	if a || b{
-		return true
+	if value < node.Value{
+		node.Left = insert(node.Left,value)
+	} else if value > node.Value{
+		node.Right = insert(node.Right,value)
 	}
-	return false
+
+	return node
 
 }
 
 func BstInsert(values []int) *Node {
 	// TODO
-	no:= &Node{Value: values[0]}
-	index:=1
-	for i:=1;i<len(values);i++{
-		if !existe(no, values[i]){
-			if index % 2 != 0{
-				no.Left = &Node{Value: values[i]}
-				index++
-			} else{
-				no.Right = &Node{Value: values[i]}
-				index++
-
-			}
-
-		}
+	if len(values) == 0 {
+		return nil
 	}
+	var root *Node
 	
-	_ = values
+	for i:= 0; i<len(values); i++{
+		root = insert(root, values[i])
+	}
 
-	return no
+	return root
 }
 
 // -----------------------------------------------------------------------------------
