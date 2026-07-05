@@ -11,21 +11,30 @@ import (
 // Não modifique a assinatura da função floodFill
 func floodFill(image [][]int, sr int, sc int, color int) [][]int {
 	//
-	if sr < 0 || sc < 0 || sr > len(image) - 1 || sc > len(image[0]) - 1{
+	corOri:= image[sr][sc]
+	if corOri == color{
 		return image
 	}
-	if image[sr][sc] == image[sr+1][sc] && color != image[sr][sc]{
-		image[sr][sc] = color 
+
+	var pintar func(sr int, sc int)
+	pintar = func(sr int, sc int) {
+		if sr < 0 || sc < 0 || sr >= len(image) || sc >= len(image[0]) {
+			return
+		}
+		if image[sr][sc] != corOri {
+			return
+		}
+		image[sr][sc] = color
+		pintar(sr+1, sc)
+		pintar(sr-1, sc)
+		pintar(sr, sc+1)
+		pintar(sr, sc-1)
 	}
-	
-		floodFill(image, sr + 1, sc, color)
-		floodFill(image, sr - 1, sc, color)
-		floodFill(image, sr, sc + 1, color)
-		floodFill(image, sr, sc - 1, color)
-	
-	
+
+	pintar(sr, sc)
 	return image
 }
+	
 
 // Não modifique a função main
 func main() {

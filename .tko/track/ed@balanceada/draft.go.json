@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_19-09-02",
+            "content": "@@ -52,19 +52,8 @@\n     \n-return true\n %0A%7D%0A%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-07-04_19-09-13",
+            "content": "@@ -141,56 +141,46 @@\n     \n-if ta(b)%7B%0A        fmt.Println(%22balanceado%22)%0A    %7D\n+result := ta(b)%0A    fmt.Println(result)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-07-04_19-09-48",
+            "content": "@@ -52,422 +52,19 @@\n     \n-x:=0%0A    y:=0%0A    z:=0%0A%0A    for i:=0; i%3Clen(b); i++%7B%0A        if b%5Bi%5D == '('%7B%0A            x++%0A        %7Delse if b%5Bi%5D == ')'%7B%0A            x--%0A        %7Delse if b%5Bi%5D == '%5B'%7B%0A            y++%0A        %7Delse if b%5Bi%5D == '%5D'%7B%0A            y--%0A        %7Delse if b%5Bi%5D == '%7B'%7B%0A            z++%0A        %7Delse if b%5Bi%5D == '%7D'%7B%0A            z--%0A        %7D%0A    %7D%0A%0A    if x==0 && y==0 && z==0%7B%0A        return true%0A    %7D%0A    return false%0A%0A%0A\n+return true\n %0A%7D%0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-07-04_19-10-46",
+            "content": "@@ -76,51 +76,8 @@\n =0%0A%0A\n-    a:= false%0A    b:= false%0A    c:= false%0A%0A\n     \n@@ -145,29 +145,8 @@\n x++%0A\n-            a = true%0A\n     \n@@ -173,13 +173,8 @@\n  ')'\n- && a\n %7B%0A  \n@@ -191,30 +191,8 @@\n x--%0A\n-            a = false%0A\n     \n@@ -237,29 +237,8 @@\n y++%0A\n-            b = true%0A\n     \n@@ -265,13 +265,8 @@\n  '%5D'\n- && b\n %7B%0A  \n@@ -283,30 +283,8 @@\n y--%0A\n-            b = false%0A\n     \n@@ -329,29 +329,8 @@\n z++%0A\n-            c = true%0A\n     \n@@ -357,13 +357,8 @@\n  '%7D'\n- && c\n %7B%0A  \n@@ -375,30 +375,8 @@\n z--%0A\n-            c = false%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-04_19-15-55",
+            "content": "@@ -80,42 +80,24 @@\n     \n-var a bool = false%0A    var p bool \n+a:= false%0A    b:\n = fa\n@@ -108,19 +108,10 @@\n     \n-var c bool \n+c:\n = fa\n@@ -336,17 +336,17 @@\n         \n-p\n+b\n  = true%0A\n@@ -377,17 +377,17 @@\n  '%5D' && \n-p\n+b\n %7B%0A      \n@@ -408,17 +408,17 @@\n         \n-p\n+b\n  = false\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-04_19-17-23",
+            "content": "@@ -51,25 +51,104 @@\n %0A   \n-var pilha %5B%5Dbyte%0A\n+ x:=0%0A    y:=0%0A    z:=0%0A%0A    var a bool = false%0A    var p bool = false%0A    var c bool = false%0A%0A \n    f\n@@ -157,16 +157,13 @@\n  i:=\n- \n 0; i\n- %3C \n+%3C\n len(\n@@ -173,130 +173,88 @@\n  i++\n- \n %7B%0A    \n-char := b%5Bi%5D%0A\n     if \n- char\n+b%5Bi%5D\n  == '('\n- %7C%7C char == '%5B' %7C%7C char == '%7B' %7B%0A        pilha = append(pilha, char)%0A\n+%7B%0A            x++%0A            a = true%0A    \n     %7D\n- \n else if \n char\n@@ -249,28 +249,28 @@\n else if \n-char\n+b%5Bi%5D\n  == ')' \n %7C%7C char \n@@ -265,67 +265,80 @@\n ')' \n-%7C%7C char == '%5D' %7C%7C char == '%7D' %7B%0A        if len(pilha)\n+&& a%7B%0A            x--%0A            a = false%0A        %7Delse if b%5Bi%5D\n  == \n-0 \n+'%5B'\n %7B%0A  \n@@ -347,37 +347,85 @@\n         \n-return false%0A\n+y++%0A            p = true%0A        %7Delse if b%5Bi%5D == '%5D' && p%7B%0A \n         \n %7D%0A      \n@@ -408,33 +408,38 @@\n  && p%7B%0A         \n-%7D\n+   y--\n %0A        topo :=\n@@ -435,141 +435,139 @@\n     \n-topo := pilha%5Blen(pilha)-1%5D%0A        if (char == ')' && topo != '(') %7C%7C (char == '%5D' && topo != '%5B') %7C%7C (char == '%7D' && topo != '%7B') %7B\n+    p = false%0A        %7Delse if b%5Bi%5D == '%7B'%7B%0A            z++%0A            c = true%0A        %7Delse if b%5Bi%5D == '%7D' && c%7B%0A            z--\n %0A   \n@@ -575,22 +575,19 @@\n         \n-return\n+c =\n  false%0A \n@@ -603,55 +603,69 @@\n     \n+%7D%0A%0A\n     \n-pilha = pilha%5B:len(pilha)-1%5D%0A    %7D%0A\n+if x==0 && y==0 && z==0%7B%0A        return true%0A \n    %7D%0A   \n retu\n@@ -664,30 +664,22 @@\n %0A   \n+ \n return \n-len(pilha) == 0\n+false%0A\n %0A%0A%0A%7D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-04_19-23-29",
+            "content": "@@ -701,59 +701,8 @@\n o%22)%0A\n-    %7D else %7B%0A        fmt.Println(%22nao balanceado%22)%0A\n     \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-07-04_19-24-50",
+            "content": "package main\nimport \"fmt\"\n\nfunc ta(b []byte) bool{\n   var pilha []byte\n   for i:= 0; i < len(b); i++ {\n    char := b[i]\n    if  char == '(' || char == '[' || char == '{' {\n        pilha = append(pilha, char)\n    } else if char == ')' || char == ']' || char == '}' {\n        if len(pilha) == 0 {\n            return false\n        }\n        topo := pilha[len(pilha)-1]\n        if (char == ')' && topo != '(') || (char == ']' && topo != '[') || (char == '}' && topo != '{') {\n            return false\n        }\n        pilha = pilha[:len(pilha)-1]\n    }\n   }\n   return len(pilha) == 0\n\n\n}\n\nfunc main() {\n    bal := \"\"\n    fmt.Scan(&bal)\n\n    b := []byte(bal)\n\n    if ta(b){\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "lines": "37"
+        }
+    ]
+}
