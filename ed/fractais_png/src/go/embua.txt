@@ -1,0 +1,52 @@
+
+
+package main
+
+import (
+	"fmt"
+	
+)
+
+
+
+func embua(pen *Pen, dist float64, gr float64) {
+	if dist < 10 {
+		
+		return
+	}
+	embua(pen, dist - 10, gr)
+	pen.SetLineWidth(gr)
+	gr = gr - 1
+	pen.Walk(dist)
+	pen.Right(90)
+	
+}
+
+func main() {
+	pen := NewPen(600, 600)
+	pen.SetHeading(0)
+	pen.SetPosition(200, 100)
+	var gr float64 = 10.0
+	pen.SetLineWidth(gr)
+	embua(pen, 200, gr)
+	pen.SavePNG("embua.png")
+	fmt.Println("PNG file created successfully.")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+package main
+
+
+import (
+	"fmt"
+	
+)
+
+
+
+
+func arvore(pen *Pen, dist float64) {
+	
+	if dist < 10 {
+		
+		return
+	}
+	pen.Walk(dist)
+	pen.Left(30)
+	arvore(pen, dist*0.75)
+	pen.Right(60)
+	arvore(pen, dist*0.75)
+	pen.Left(30)
+	pen.Walk(-dist)
+	
+}
+
+func main() {
+	pen := NewPen(900, 900)
+	pen.SetHeading(90)
+	pen.SetPosition(450,1100)
+
+	pen.SetLineWidth(6)
+	
+	arvore(pen, 200)
+	pen.SavePNG("arvore.png")
+	fmt.Println("PNG file created successfully.")
+}

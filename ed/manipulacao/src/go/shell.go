@@ -6,7 +6,15 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	
 )
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
 
 func getMen(vet []int) []int {
 	_ = vet
@@ -36,25 +44,35 @@ func getCalmWomen(vet []int) []int {
 func sortVet(vet []int) []int {
 	_ = vet
 
-	aux := make([]int, len(vet))
-	idx := 0
+	
+	
 	for i := 0; i < len(vet); i++ {
-		idx = i
+		
 		for j := i + 1; j < len(vet); j++ {
 			if vet[i] > vet[j] {
-				idx = j
+				vet[i], vet[j] = vet[j], vet[i]
 			}
 		
 		}
-		aux[i] = vet[idx]
+		
 	}
 
-	return aux
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	for i := 0; i < len(vet); i++ {
+		
+		for j := i + 1; j < len(vet); j++ {
+			if abs(vet[i]) > abs(vet[j]) {
+				vet[i], vet[j] = vet[j], vet[i]
+			}
+		
+		}
+		
+	}
+
+	return vet
 }
 
 func reverse(vet []int) []int {
@@ -70,7 +88,23 @@ func reverse(vet []int) []int {
 
 func unique(vet []int) []int {
 	_ = vet
-	return nil
+	var aux []int
+	aux = append(aux, vet[0])
+	for i:= 1; i < len(vet); i++{
+		v := true
+		for j:=0 ; j<len(aux); j++{
+			if vet[i] == aux[j]{
+				v = false
+			}
+
+		}
+		if v{
+			aux = append(aux, vet[i])
+		}
+
+	}
+
+	return aux
 }
 
 func repeated(vet []int) []int {

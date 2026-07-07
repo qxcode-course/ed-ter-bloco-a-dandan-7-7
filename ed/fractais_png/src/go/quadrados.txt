@@ -1,0 +1,60 @@
+package main
+
+
+import (
+	"fmt"
+	
+)
+
+
+
+
+func quadrado(pen *Pen, dist float64) {
+	
+	
+    if dist < 1 {
+        return
+    }
+    
+    
+    pen.Up() 
+    pen.Walk(dist / 2)
+    pen.Left(90)
+    pen.Walk(dist / 2)
+    
+   
+    pen.Down() 
+    
+    for i := 0; i < 4; i++ {
+        
+        quadrado(pen, dist / 2.2)
+        
+       
+        pen.Left(90)
+        pen.Walk(dist)
+    }
+    
+    
+    pen.Up()
+    pen.Walk(-dist / 2)
+    pen.Left(-90)
+    pen.Walk(-dist / 2)
+    
+    
+    pen.Down()
+
+    
+    
+}
+
+func main() {
+	pen := NewPen(700, 700)
+	pen.SetHeading(90)
+	
+	pen.SetPosition(350, 350)
+	pen.SetLineWidth(1)
+	quadrado(pen, 450)
+	
+	pen.SavePNG("quadrados.png")
+	fmt.Println("PNG file created successfully.")
+}

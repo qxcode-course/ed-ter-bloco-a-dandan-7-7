@@ -25,16 +25,16 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@basic
-- ed@map_set
 - ed@backtrack
-- ed@rec
-- ed@list
-- ed@tree
 - ed@bfs
-- ed@linear
-- ed@dfs
+- ed@map_set
 - ed@vector
+- ed@dfs
+- ed@list
+- ed@rec
+- ed@basic
+- ed@tree
+- ed@linear
 flags:
   inbox: all
   panel: skills
@@ -44,5 +44,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@manipulacao
-selected_index: 12
+selected: ed@rotten
+selected_index: 98

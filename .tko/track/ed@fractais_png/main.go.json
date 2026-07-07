@@ -1,3 +1,9 @@
 {
-    "patches": []
+    "patches": [
+        {
+            "label": "2026-07-07_15-10-50",
+            "content": "package main\n\n\nimport (\n\t\"fmt\"\n\t\n)\n\n\n\n\nfunc rotacao(pen *Pen, dist float64, x float64, y float64, z float64) {\n\t\n\t\n    if dist < 1 {\n        return\n    }\n\n    \n\n\n    for i := 0; i < 3; i++ {\n        pen.Walk(dist)\n        dist = dist - 8\n        pen.Right(90)\n        if x + 75 == 255 {\n            x = 0\n        } else {\n            x = x + 75\n        }\n        if y + 20 == 255 {\n            y = 0\n        } else {\n            y = y + 20\n        }\n        if z + 40 == 255 {\n            z = 0\n        } else {\n            z = z + 40\n        }\n        pen.SetRGB(x, y, z)\n    }\n    \n    \n    rotacao(pen, dist, x, y, z)\n    \n    \n\n    \n    \n}\n\nfunc main() {\n\tpen := NewPen(700, 700)\n\tpen.SetHeading(0)\n\t\n\tpen.SetPosition(100, 100)\n\tpen.SetLineWidth(1)\n    x := 255.0\n    y := 0.0\n    z := 0.0\n    pen.SetRGB(x, y, z)\n\trotacao(pen, 450, x, y, z)\n\t\n\tpen.SavePNG(\"rotacao.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "67"
+        }
+    ]
 }

@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-07_01-15-33",
+            "content": "@@ -23,610 +23,20 @@\n mt%22%0A\n-%0Afunc remover(p, sai %5B%5Dint) %5B%5Dint %7B%0A%09var res %5B%5Dint%0A%0A%09for i := 0; i %3C len(sai); i++ %7B%0A%09%09for j := 0; j %3C len(p); j++ %7B%0A%09%09%09if sai%5Bi%5D == p%5Bj%5D %7B%0A%09%09%09%09p%5Bj%5D = 0%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C len(p); i++ %7B%0A%09%09if p%5Bi%5D != 0 %7B%0A%09%09%09res = append(res, p%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%0A%09return res%0A%0A%0A%7D%0A%0Afunc main() %7B%0A%09n:=0%0A%09fmt.Scan(&n)%0A%09var pessoas %5B%5Dint%0A%0A%09for i:=0; i%3Cn; i++ %7B%0A%09%09var p int%0A%09%09fmt.Scan(&p)%0A%09%09pessoas = append(pessoas, p)%0A%09%7D%0A%09sairam:= 0%0A%09fmt.Scan(&sairam)%0A%09var sairamPessoas %5B%5Dint%0A%09for i:=0; i%3Csairam; i++ %7B%0A%09%09var p int%0A%09%09fmt.Scan(&p)%0A%09%09sairamPessoas = append(sairamPessoas, p)%0A%09%7D%0A%09pessoas = remover(pessoas, sairamPessoas)%0A%0A\n+func main() %7B\n %0A%7D%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2026-07-07_01-21-26",
+            "content": "@@ -285,18 +285,16 @@\n es%0A%0A%0A%7D%0A%0A\n-%0A%0A\n func mai\n@@ -626,29 +626,7 @@\n s)%0A%0A\n-%09fmt.Println(pessoas)%0A\n %0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-07_01-21-49",
+            "content": "@@ -628,46 +628,8 @@\n s)%0A%0A\n-%09for i := 0; i %3C len(pessoas); i++ %7B%0A%09\n %09fmt\n@@ -648,14 +648,9 @@\n soas\n-%5Bi%5D)%0A%09%7D\n+)%0A\n %0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-07_01-22-34",
+            "content": "@@ -672,16 +672,18 @@\n mt.Print\n+ln\n (pessoas\n@@ -685,16 +685,15 @@\n ssoas%5Bi%5D\n- \n )%0A%09%7D%0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-07_01-22-44",
+            "content": "@@ -687,31 +687,12 @@\n s%5Bi%5D\n-,%22 %22\n  )%0A%09%7D%0A\n-%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-07_01-22-59",
+            "content": "package main\nimport \"fmt\"\n\nfunc remover(p, sai []int) []int {\n\tvar res []int\n\n\tfor i := 0; i < len(sai); i++ {\n\t\tfor j := 0; j < len(p); j++ {\n\t\t\tif sai[i] == p[j] {\n\t\t\t\tp[j] = 0\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < len(p); i++ {\n\t\tif p[i] != 0 {\n\t\t\tres = append(res, p[i])\n\t\t}\n\t}\n\n\treturn res\n\n\n}\n\n\n\nfunc main() {\n\tn:=0\n\tfmt.Scan(&n)\n\tvar pessoas []int\n\n\tfor i:=0; i<n; i++ {\n\t\tvar p int\n\t\tfmt.Scan(&p)\n\t\tpessoas = append(pessoas, p)\n\t}\n\tsairam:= 0\n\tfmt.Scan(&sairam)\n\tvar sairamPessoas []int\n\tfor i:=0; i<sairam; i++ {\n\t\tvar p int\n\t\tfmt.Scan(&p)\n\t\tsairamPessoas = append(sairamPessoas, p)\n\t}\n\tpessoas = remover(pessoas, sairamPessoas)\n\n\tfor i := 0; i < len(pessoas); i++ {\n\t\tfmt.Print(pessoas[i],\" \" )\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "52"
+        }
+    ]
+}

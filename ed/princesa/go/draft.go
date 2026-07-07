@@ -1,70 +1,69 @@
 package main
 import "fmt"
+
+
+
+type Pessoas struct{
+    val int
+    viv bool
+}
+
+func  Proxviv(in int, p []Pessoas) int {
+    n := len(p)
+    i := (in + 1)% n
+    for {
+        if p[i].viv {
+            return i
+        }
+        i = (i + 1) % n
+    }
+
+}
+
 func main() {
     var n, e int
     fmt.Scan(&n, &e)
 
 
-    pessoas := make([]int, n)
-
-    for i:= 0; i<n;i++ {
-        pessoas[i] = i+1
+    pessoas := make([]Pessoas, n)
+    for i := 0; i < n; i++ {
+        pessoas[i].val = i+1
+        pessoas[i].viv = true
     }
-
-    var achou bool
-    var valor int
-    for i := 0; i < n - 1; i++ {
-        achou = false
-        fmt.Print("[ ")
-        for j := 0; j < n; j++ {
-            if pessoas[j] == 0{
-                continue
-            }
-            if pessoas[j] != 0 {
-                fmt.Print(pessoas[j])
-            }
-            if pessoas[j] == e {
-                fmt.Print("> ")
-            } else {
-                fmt.Print(" ")
-            }
-        }
+    
+    total := len(pessoas) - 1
+    espadaIdx := e - 1
+    for total > 0 {
         
-        fmt.Println("]")
-        for j := 1; j <= n; j++ {
-            if pessoas[j] == e {
-                for k := j + 1; k < n; k++ {
-                    if pessoas[k] != 0 {
-                        pessoas[k] = 0
-                        achou = true
-                        valor = k + 1
-                        break 
-                    }
+        
+        fmt.Print("[ ")
+        for k := 0; k < len(pessoas); k++{
+            if pessoas[k].viv{
+                fmt.Print(pessoas[k].val)
+                if k == espadaIdx {
+                    fmt.Print("> ")
+                } else{
+                    fmt.Print(" ")
                 }
-                if !achou {
-                    for k := 1; k <= j; k++ {
-                        if pessoas[k] != 0 {
-                            pessoas[k] = 0
-                            achou = true
-                            valor = k + 1
-                            break 
-                        }
-                    }
-                }
-                if(e == n - 1) {
-                    for k := 1; k <= n; k++ {
-                        if pessoas[k] != 0 {
-                            e = k
-                            break
-                        }
-                    }
-                } else {
-                    e = valor
-                }
-                break
             }
         }
-    }
+        fmt.Print("]\n")
 
+
+        vitimaIdx := Proxviv(espadaIdx, pessoas)
+		pessoas[vitimaIdx].viv = false 
+		total--
+        espadaIdx = Proxviv(vitimaIdx, pessoas)
+        
+      
+        
+    }
+    fmt.Print("[")
+	for k := 0; k < n; k++ {
+		if pessoas[k].viv {
+			fmt.Printf(" %d> ", pessoas[k].val)
+		}
+	}
+	fmt.Println("]")
 
 }
