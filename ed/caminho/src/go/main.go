@@ -11,7 +11,14 @@ type Pos struct {
 }
 
 func (p Pos) getNeig() []Pos {
-	return nil
+
+	return []Pos{
+		{p.l - 1, p.c},
+		{p.l+1, p.c},
+		{p.l, p.c-1},
+		{p.l, p.c+1},
+	}
+	
 }
 
 func inside(grid [][]rune, pos Pos) bool {
@@ -26,9 +33,46 @@ func match(grid [][]rune, pos Pos, char rune) bool {
 
 func search(grid [][]rune, startPos Pos, endPos Pos) {
 	_, _, _ = grid, startPos, endPos
+
+	q:= NewQueue[Pos]()
+	q.Enqueue(startPos)
+
+	visitados := make(map[Pos]bool)
+	visitados[startPos] = true
+
+	caminho := make(map[Pos]Pos)
+
+	achou := false
+
+	for !q.IsEmpty() {
+		atual, _ := q.Dequeue()
+
+		if atual == endPos {
+			achou = true
+			break
+		}
+		for _, vizinho := range atual.getNeig() {
+			if inside(grid, vizinho) && grid[vizinho.l][vizinho.c] != '#' && !visitados[vizinho] {
+				visitados[vizinho] = true
+				caminho[vizinho] = atual
+				q.Enqueue(vizinho)
+			}
+		}
+	}
+
+	if achou {
+		grid[endPos.l][endPos.c] = '.'
+		pos:= caminho[endPos]
+		for pos != startPos {
+			grid[pos.l][pos.c] = '.'
+			pos = caminho[pos]
+		}
+		grid[startPos.l][startPos.c] = '.'
+	}
+
 }
 
-func voltar()
+
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)

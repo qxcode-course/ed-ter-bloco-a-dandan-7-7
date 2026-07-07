@@ -2,25 +2,45 @@ package main
 
 import (
 	"fmt"
-	//"image/jpeg"
+	
 )
 
-func BT()
+func BT(idx, somaAtual, obj int, moedas[] int) bool{
+    if somaAtual == obj{
+        return true
+    }
+    if somaAtual > obj{
+        return false
+    }
+    if idx >= len(moedas){
+        return false
+    }
+
+    a:= BT(idx+1, somaAtual + moedas[idx], obj, moedas)
+    
+    if a{
+        return true
+    }
+    b:= BT(idx+1, somaAtual, obj, moedas)
+    if b{
+        return true
+    }
+
+
+    return false
+}
 
 func main() {
     var total int
-    fmt.Scanf("%d", &total)
+    fmt.Scan(&total)
     var numero int
-    fmt.Scanf("%d", &numero)
+    fmt.Scan(&numero)
     vetor := make([]int, total)
 
     for i := 0; i < total; i++ {
-        fmt.Scanf("%d", &vetor[i])
+        fmt.Scan(&vetor[i])
     }
 
-    
-
-
-    fmt.Printf("false\n")
+    fmt.Println(BT(0, 0, numero, vetor))
 
 }

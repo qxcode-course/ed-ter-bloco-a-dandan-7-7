@@ -1,0 +1,114 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_14-25-50",
+            "content": "@@ -557,129 +557,18 @@\n et%0A%09\n-var rep %5B%5Dint%0A%0A%09for i:= 1; i %3C len(vet); i++%7B%0A%09%09if vet%5Bi%5D == vet%5Bi-1%5D%7B%0A%09%09%09rep = append(rep, vet%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%0A%09%0A%09return rep\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-05_14-27-33",
+            "content": "@@ -569,33 +569,33 @@\n %5B%5Dint%0A%0A%09for i:= \n-0\n+1\n ; i %3C len(vet); \n@@ -603,37 +603,8 @@\n ++%7B%0A\n-%09%09for j:=0 ; j%3Clen(vet)j++%7B%0A%09\n %09%09if\n@@ -622,13 +622,14 @@\n vet%5B\n-j\n+i-1\n %5D%7B%0A\n-%09\n %09%09%09r\n@@ -657,14 +657,8 @@\n i%5D)%0A\n-%09%09%09%7D%0A%0A\n %09%09%7D%0A\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-07-05_14-28-27",
+            "content": "@@ -622,18 +622,16 @@\n len(vet)\n-; \n j++%7B%0A%09%09%09\n",
+            "lines": "126"
+        },
+        {
+            "label": "2026-07-05_14-28-50",
+            "content": "@@ -612,11 +612,9 @@\n  j:=\n-i+1\n+0\n  ; j\n",
+            "lines": "126"
+        },
+        {
+            "label": "2026-07-05_14-29-40",
+            "content": "@@ -514,140 +514,8 @@\n %0A%7D%0A%0A\n-func jaexis(elem %5B%5Dint, val int) bool%7B%0A%0A%09for i:= 0; i %3C len(elem); i++%7B%0A%09%09if elem%5Bi%5D = val%7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -609,16 +609,18 @@\n for j:=i\n++1\n  ; j%3Clen\n@@ -659,36 +659,8 @@\n j%5D%7B%0A\n-%09%09%09%09if !jaexis(rep, vet%5Bi%5D)%0A\n %09%09%09%09\n",
+            "lines": "126"
+        },
+        {
+            "label": "2026-07-05_14-34-30",
+            "content": "@@ -596,17 +596,16 @@\n lem%5Bi%5D =\n-=\n  val%7B%0A%09%09\n@@ -812,20 +812,17 @@\n  vet%5Bi%5D)\n-%7B%0A%0A%09\n+%0A\n %09%09%09%09rep \n@@ -847,14 +847,8 @@\n i%5D)%0A\n-%09%09%09%09%7D%0A\n %09%09%09%7D\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-07-05_14-34-48",
+            "content": "@@ -741,17 +741,17 @@\n %09for j:=\n-0\n+i\n  ; j%3Clen\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-07-05_14-35-01",
+            "content": "@@ -506,24 +506,157 @@\n turn nil%0A%7D%0A%0A\n+func jaexis(elem %5B%5Dint, val int) bool%7B%0A%0A%09for i:= 0; i %3C len(elem); i++%7B%0A%09%09if elem%5Bi%5D == val%7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func repeate\n@@ -736,26 +736,8 @@\n ++%7B%0A\n-%09%09apantes:= false%0A\n %09%09fo\n@@ -741,17 +741,17 @@\n %09for j:=\n-i\n+0\n  ; j%3Clen\n@@ -794,51 +794,36 @@\n %09%09%09%09\n-apantes = true%0A%09%09%09%7D%0A%09%09%09%0A%09%09%7D%0A%09%09if apantes\n+if !jaexis(rep, vet%5Bi%5D)\n %7B%0A%0A\n+%09%09\n %09%09%09r\n@@ -843,24 +843,36 @@\n ep, vet%5Bi%5D)%0A\n+%09%09%09%09%7D%0A%09%09%09%7D%0A%0A\n %09%09%7D%0A%09%7D%0A%0A%09%0A%09r\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-07-05_14-39-15",
+            "content": "@@ -626,17 +626,17 @@\n %09for j:=\n-0\n+i\n  ; j%3Clen\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-07-05_14-39-37",
+            "content": "@@ -694,18 +694,8 @@\n rue%0A\n-%09%09%09%09break%0A\n %09%09%09%7D\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-07-05_14-40-08",
+            "content": "@@ -632,17 +632,24 @@\n :=0 ; j%3C\n-i\n+len(vet)\n ; j++%7B%0A%09\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-07-05_14-40-49",
+            "content": "@@ -445,101 +445,18 @@\n et%0A%09\n-var rev  %5B%5Dint%0A%09j:= 0%0A%09for i:= len(vet)-1; i %3E=0; i--%7B%0A%09%09rev%5Bj%5D = vet%5Bi%5D%0A%09%09j++%0A%09%7D%0A%09return rev\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-07-05_14-45-54",
+            "content": "@@ -274,119 +274,18 @@\n et%0A%09\n-var gcw %5B%5Dint%0A%09for i:= 0; i %3C len(vet); i++ %7B%0A%09%09if vet%5Bi%5D %3C 0 %7B%0A%09%09%09gcw = append(gcw, vet%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09return gcw\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-07-06_20-50-07",
+            "content": "@@ -550,32 +550,37 @@\n var rev  %5B%5Dint%0A%09\n+j:= 0\n %0A%09for i:= len(ve\n@@ -606,33 +606,26 @@\n %09rev\n- = append(rev,\n+%5Bj%5D =\n  vet%5Bi%5D\n-)\n %0A%09%09\n+j++\n %0A%09%7D%0A\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-07-06_20-52-54",
+            "content": "@@ -336,24 +336,8 @@\n %3C 0 \n-&& vet%5Bi%5D %3E -10 \n %7B%0A%09%09\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-07-06_20-53-25",
+            "content": "@@ -386,18 +386,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%09%0A\n %09return \n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-07-06_20-53-50",
+            "content": "@@ -378,32 +378,33 @@\n  vet%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A\n+%09\n %0A%09return gcw%0A%7D%0A%0A\n@@ -448,157 +448,16 @@\n vet%0A\n-%0A%09aux := make(%5B%5Dint, len(vet))%0A%09aux = vet%0A%09for i := 0; i %3C len(aux); i++ %7B%0A%09%09if aux%5B0%5D %3E aux%5Bi%5D %7B%0A%09%09%09aux%5B0%5D, aux%5Bi%5D = aux%5Bi%5D, aux%5B0%5D%0A%09%09%7D%0A%09%7D%0A%0A\n %09return \n aux%0A\n@@ -456,11 +456,11 @@\n urn \n-aux\n+nil\n %0A%7D%0A%0A\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-07-06_20-57-48",
+            "content": "@@ -522,47 +522,8 @@\n + %7B%0A\n-%09%09for j := i + 1; j %3C len(aux); j++ %7B%0A%09\n %09%09if\n@@ -531,17 +531,17 @@\n aux%5B\n-i\n+0\n %5D %3E aux%5B\n j%5D %7B\n@@ -540,14 +540,13 @@\n aux%5B\n-j\n+i\n %5D %7B%0A\n-%09\n %09%09%09a\n@@ -576,21 +576,16 @@\n  aux%5B0%5D%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "154"
+        },
+        {
+            "label": "2026-07-06_20-58-24",
+            "content": "@@ -569,17 +569,17 @@\n  aux%5Bi%5D \n-%3C\n+%3E\n  aux%5Bj%5D \n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-07-06_20-58-38",
+            "content": "@@ -479,16 +479,17 @@\n ))%0A%09\n-id\n+au\n x \n-:\n = \n-0\n+vet\n %0A%09fo\n@@ -498,35 +498,35 @@\n i := 0; i %3C len(\n-vet\n+aux\n ); i++ %7B%0A%09%09idx =\n@@ -522,18 +522,8 @@\n + %7B%0A\n-%09%09idx = i%0A\n %09%09fo\n@@ -544,19 +544,19 @@\n j %3C len(\n-vet\n+aux\n ); j++ %7B\n@@ -566,20 +566,20 @@\n %09if \n-vet\n+aux\n %5Bi%5D %3C \n-vet\n+aux\n %5Bj%5D \n@@ -588,47 +588,48 @@\n %09%09%09%09\n-idx = j%0A%09%09%09%7D%0A%09%09%0A%09%09%7D%0A%09%09aux%5Bi%5D = vet%5Bidx%5D\n+aux%5B0%5D, aux%5Bi%5D = aux%5Bi%5D, aux%5B0%5D%0A%09%09%09%7D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-07-06_21-00-35",
+            "content": "@@ -578,17 +578,17 @@\n  vet%5Bi%5D \n-%3E\n+%3C\n  vet%5Bj%5D \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-07-06_21-00-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\t_ = vet\n\tvar men []int\n\t\n\tfor i:= 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tmen = append(men, vet[i])\n\t\t}\n\t}\n\treturn men\n}\n\n\t\nfunc getCalmWomen(vet []int) []int {\n\t_ = vet\n\tvar gcw []int\n\tfor i:= 0; i < len(vet); i++ {\n\t\tif vet[i] < 0 && vet[i] > -10 {\n\t\t\tgcw = append(gcw, vet[i])\n\t\t}\n\t}\n\n\treturn gcw\n}\n\nfunc sortVet(vet []int) []int {\n\t_ = vet\n\n\taux := make([]int, len(vet))\n\tidx := 0\n\tfor i := 0; i < len(vet); i++ {\n\t\tidx = i\n\t\tfor j := i + 1; j < len(vet); j++ {\n\t\t\tif vet[i] > vet[j] {\n\t\t\t\tidx = j\n\t\t\t}\n\t\t\n\t\t}\n\t\taux[i] = vet[idx]\n\t}\n\n\treturn aux\n}\n\nfunc sortStress(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc reverse(vet []int) []int {\n\t_ = vet\n\tvar rev  []int\n\t\n\tfor i:= len(vet)-1; i >=0; i--{\n\t\trev = append(rev, vet[i])\n\t\t\n\t}\n\treturn rev\n}\n\nfunc unique(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\tvar rep []int\n\n\tfor i:= 0; i < len(vet); i++{\n\t\tapantes:= false\n\t\tfor j:=0 ; j<i; j++{\n\t\t\tif vet[i] == vet[j]{\n\t\t\t\tapantes = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t\t\n\t\t}\n\t\tif apantes{\n\n\t\t\trep = append(rep, vet[i])\n\t\t}\n\t}\n\n\t\n\treturn rep\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n\n",
+            "lines": "159"
+        }
+    ]
+}

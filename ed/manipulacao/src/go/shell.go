@@ -10,17 +10,46 @@ import (
 
 func getMen(vet []int) []int {
 	_ = vet
-	return nil
+	var men []int
+	
+	for i:= 0; i < len(vet); i++ {
+		if vet[i] > 0 {
+			men = append(men, vet[i])
+		}
+	}
+	return men
 }
 
+	
 func getCalmWomen(vet []int) []int {
 	_ = vet
-	return nil
+	var gcw []int
+	for i:= 0; i < len(vet); i++ {
+		if vet[i] < 0 && vet[i] > -10 {
+			gcw = append(gcw, vet[i])
+		}
+	}
+
+	return gcw
 }
 
 func sortVet(vet []int) []int {
 	_ = vet
-	return nil
+
+	aux := make([]int, len(vet))
+	idx := 0
+	for i := 0; i < len(vet); i++ {
+		idx = i
+		for j := i + 1; j < len(vet); j++ {
+			if vet[i] > vet[j] {
+				idx = j
+			}
+		
+		}
+		aux[i] = vet[idx]
+	}
+
+	return aux
 }
 
 func sortStress(vet []int) []int {
@@ -30,7 +59,13 @@ func sortStress(vet []int) []int {
 
 func reverse(vet []int) []int {
 	_ = vet
-	return nil
+	var rev  []int
+	
+	for i:= len(vet)-1; i >=0; i--{
+		rev = append(rev, vet[i])
+		
+	}
+	return rev
 }
 
 func unique(vet []int) []int {
@@ -40,7 +75,25 @@ func unique(vet []int) []int {
 
 func repeated(vet []int) []int {
 	_ = vet
-	return nil
+	var rep []int
+
+	for i:= 0; i < len(vet); i++{
+		apantes:= false
+		for j:=0 ; j<i; j++{
+			if vet[i] == vet[j]{
+				apantes = true
+				break
+			}
+			
+		}
+		if apantes{
+
+			rep = append(rep, vet[i])
+		}
+	}
+
+	
+	return rep
 }
 
 func main() {

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_19-19-48",
+            "content": "package main\nimport (\n    \"fmt\"\n    \"bufio\"\n    \"os\"\n    )\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n\n    l, c:=0,0\n\n    scanner.Scan()\n    fmt.Sscanf(scanner.Text(), \"%d %d\", &l, &c)\n    \n    grid := make([][]rune, l)\n\n    for i := 0; i < l; i++ {\n        grid[i] = make([]rune, c)\n        for j := 0; j < c; j++ {\n            scanner.Scan()\n            \n        }\n    }\n}\n",
+            "lines": "24"
+        }
+    ]
+}
